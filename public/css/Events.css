@@ -1,0 +1,194 @@
+section .display-3 {
+    padding: 10px;
+}
+.title{
+    margin-bottom: 0;
+}
+
+/*streams*/
+.card-deck {
+    margin-bottom: 20px;
+}
+
+.card-deck a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.2s;
+}
+
+.card-deck a:hover {
+    color: indianred;
+    border: 4px solid red;
+    box-shadow: 5px 5px #323A42;
+}
+
+
+/*jumbotron*/
+
+.jumbotron {
+    width: 100%;
+    position: relative;
+    left: -100%;
+    transition: 0.4s;
+
+}
+
+/*calendar*/
+.calendar {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+.calendar-event {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 25%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    overflow:hidden;
+    transition:background-color .3s  linear, flex-basis .3s linear;
+
+}
+
+.event-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin: 0 20px;
+
+}
+
+.event-small p:nth-of-type(1) {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.event-logo {
+    flex-basis: 20vh;
+
+    width: 20vh;
+    margin: 10px 0;
+    box-shadow: 5px 5px 5px gray;
+    border: 1px solid #c6c6c6;
+    border-radius: 50%;
+    transition: 300ms;
+    background-position: center;
+    background-size: 80%;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+.event-logo:hover {
+    box-shadow: 5px 5px 1px gray;
+    border-width: 2px;
+    border-color: red;
+    cursor: pointer;
+}
+
+.event-logo:hover ~ p, .event-small p:hover, .event-small p:hover ~ p {
+    color: red;
+}
+
+.event-big {
+    opacity: 0;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    height: 0;
+    width: 0;
+    max-width: 80%;
+    overflow: hidden;
+    transition: width .5s 300ms linear, opacity .3s .7s linear ;
+
+
+
+
+    /*padding: 20px;*/
+    text-align: left;
+}
+
+.event-big p:first-child {
+    font-size: 3rem;
+    font-weight: bold;
+
+}
+
+.event-big p:nth-of-type(2) {
+    display: block;
+    max-width: 80%;
+    height: 50%;
+    overflow: hidden;
+    text-overflow: fade;
+    white-space: nowrap;
+
+
+}
+
+
+.event-big a {
+
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: block;
+    height: 30px;
+    width: 100px;
+    line-height: 28px;
+    border: 1px solid var(--danger);
+    text-align: center;
+    border-radius: 4px;
+    color: var(--danger);
+    background-color: white;
+
+}
+
+.calendar-event.active {
+    background-color: var(--danger);
+    flex-basis: 100%;
+    justify-content: flex-start;
+
+
+}
+
+
+.calendar-event.active p {
+    color: white;
+}
+.calendar-event.active .event-big{
+    height: 100%;
+    width: 75%;
+    margin-left: 5%;
+    opacity: 1;
+
+}
+@media (max-width: 950px) {
+.calendar-event{
+    flex-basis: 30%;
+    flex-shrink: 0;
+}
+
+}
+
+@media (max-width: 600px) {
+    .calendar-event{
+        flex-basis: 40%;
+        flex-shrink: 0;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .calendar-event{
+        flex-basis: 100%;
+        flex-shrink: 0;
+    }
+}

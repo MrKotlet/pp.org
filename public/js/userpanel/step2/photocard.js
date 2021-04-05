@@ -1,0 +1,12 @@
+$('.add-other').mouseenter(()=>{
+    $('.add-other').addClass('add-other-active');
+})
+$('.add-other').mouseleave(()=>{
+    $('.add-other').removeClass('add-other-active');
+})
+$('.photo-card').mouseenter(event=>{
+    $(event.currentTarget).children('.card').addClass('card-active')
+})
+$('.photo-card').mouseleave(event=>{
+    $(event.currentTarget).children('.card').removeClass('card-active')
+})

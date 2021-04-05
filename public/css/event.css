@@ -1,0 +1,50 @@
+#home .event-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.event-header .main-logo {
+    position: static;
+    transform: none;
+
+}
+
+.container .display-3 {
+    font-weight: bold;
+}
+
+.about-event {
+    width: 100%;
+    /*border: 1px solid black*/
+}
+
+.about-event h3 {
+    font-size: 3rem;
+}
+
+.about-event a {
+    position: relative;
+
+    right: -87%;
+    top: 70%;
+}
+
+@media (max-width: 1000px) {
+    .about-event a {
+
+
+        right: -77%;
+
+    }
+}
+
+@media (max-width: 772px) {
+    .about-event a {
+
+
+        right: -67%;
+
+    }
+}

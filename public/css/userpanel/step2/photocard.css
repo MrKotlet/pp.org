@@ -1,0 +1,20 @@
+
+
+.photo-card .card{
+    min-height: 200px !important;
+    transition: all 100ms !important;
+}
+
+.card-active{
+    border: 2px solid red;
+}
+.add-other{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-other-active i, .add-other-active p{
+    color: red !important;
+    font-weight: bold ;
+}
+

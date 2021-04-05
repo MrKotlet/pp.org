@@ -1,0 +1,24 @@
+.tag-w{
+    max-width: 20%;
+    margin-left: 10px;
+}
+#ex3{
+    max-width: 70%;
+    height: 60%;
+    vertical-align: middle;
+}
+.tag-align{
+    vertical-align: middle;
+}
+
+.tag-static{
+    cursor: pointer;
+    min-width: 60px !important ;
+    height: 40px;
+    border-radius: 20px;
+    margin: 0 5px;
+}
+.tag-static p {
+    padding: 6px 8px ;
+
+}

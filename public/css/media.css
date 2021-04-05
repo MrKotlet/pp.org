@@ -1,0 +1,37 @@
+
+
+
+.video-container{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height: 0;
+    width: 100%;
+
+}
+.video-container #player{
+    left:0;
+    top:0;
+    height:100% !important;
+    width:100% !important;
+    position:absolute;
+
+}
+
+.you-tube{
+    margin-top: 100px;
+    min-height:unset;
+}
+
+.container .col-lg-8{
+    margin-bottom: 30px;
+}
+
+
+@media(max-width: 992px){
+    .container .col-lg-8 .display-4 , .col-lg-4 .display-4{
+        font-size: 2rem !important;
+        font-weight: bold;
+    }
+}
+

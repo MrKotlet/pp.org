@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="712a2132-a1fd-4b56-9b80-598a2207a844" name="po" url="http://webas22699.domeny.host">
+        <fileTransfer host="webas22699.domeny.host" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="d6246d01-dc35-40c0-8cb3-2ed4c747fc2c" name="b2b" url="sftp://157.90.158.228">
+        <fileTransfer accessType="SFTP" host="157.90.158.228" port="22" sshConfigId="e8064f3c-4e92-4f10-9d72-01941f94bd0b" sshConfig="root@157.90.158.228:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

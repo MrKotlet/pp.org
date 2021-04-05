@@ -1,0 +1,48 @@
+#logo-place{
+    transition: all 200ms;
+    width: 250px;
+    height: 250px;
+    border: 1px rgba(196, 170, 170, 0.5);
+}
+.dodaj{
+    transition: all 300ms linear;
+    font-size: 2rem;
+    text-decoration: none !important;
+}
+.pic-div{
+    transition: all 300ms;
+    min-height: 350px;
+
+}
+.pic-div-red{
+    background-color: #dc3545 ;
+}
+.pic-div-hidden{
+    background-image: none !important;
+}
+
+.logo-cir{
+    background-image: none !important;
+    color: white;
+    font-weight: bold;
+    background-color: #dc3545;
+}
+
+.main-place{
+    color: white;
+}
+.modal{
+    height: 35%;
+    vertical-align: initial;
+    overflow: visible;
+}
+.modal-content h4{
+    font-size: 2rem;
+
+}
+.invisible{
+    opacity: 0;
+}
+.visible{
+    opacity: 1;
+}
