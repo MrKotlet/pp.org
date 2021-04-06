@@ -20,46 +20,46 @@
 
 
     <section class="container row mx-auto justify-content-between">
-        @if($check)
-            @foreach($companies as $company)
-                <div class="card mb-3 row col-md-4 company">
 
-                    <div class="d-flex flex-column flex-fill justify-content-around parent">
-                        @foreach($photos as $photo)
-                            @if($company['id']==$photo['company_id'])
-                                <a href="company/{{$company['id']}}"
-                                   class="mx-auto  d-flex justify-content-center align-items-center logo-link"
-                                   style="background-image: url({{asset ('companies/'.$company['id'].'/'.$photo['name'])}});">
+        @foreach($companies as $company)
+            <div
+                class="card mb-3 row col-sm-6 col-lg-4 company @foreach($company -> tags as $tag) {{ Str::kebab($tag->name)}} @endforeach">
 
-                                    {{--                    <img src="public/companies/{{$company['id']}}/{{$photo['name']}}}" class="card-img w-100" alt="...">--}}
-                                    {{--                                    <img src="{{asset ('companies/'.$company['id'].'/'.$photo['name'])}}"--}}
-                                    {{--                                         class="card-img mx-auto catlogo" alt="...">--}}
+                <div class="d-flex flex-column flex-fill justify-content-around parent">
+                    @foreach($photos as $photo)
+                        @if($company['id']==$photo['company_id'])
+                            <a href="company/{{$company['id']}}"
+                               class="mx-auto  d-flex justify-content-center align-items-center logo-link {{$company->name}}"
+                               style="background-image: url({{asset ('companies/'.$company['id'].'/'.$photo['name'])}});">
 
 
-                                </a>
-                            @endif
-                        @endforeach
-                        <a href="/company/{{$company['id']}}" class="text-center align-self-end mx-auto">
-                            <h5 class="compname container-fluid text-align-center">{{$company->name}}</h5></a>
-                        <p class="card-text mx-auto"><small class="text-muted">
-                                @foreach($company -> tags as $tag)
-                                    {{$tag->name}},
-                                @endforeach
+                            </a>
+                        @endif
+                    @endforeach
+                    <a href="company/{{$company['id']}}" class="text-center align-self-end mx-auto">
+                        <h5 class="compname container-fluid text-align-center">{{$company->name}}</h5>
+                    </a>
+                    <p class="card-text mx-auto">
+                        <small class="text-muted">
+                            @foreach($company -> tags as $tag)
+                                {{$tag->name}}
+                            @endforeach
 
 
-                            </small></p>
-
-
-                    </div>
+                        </small>
+                    </p>
 
 
                 </div>
-            @endforeach
+
+
+            </div>
+        @endforeach
 
 
 
 
-        @endif
+
     </section>
 
     {{--    <section id="listafirm">--}}

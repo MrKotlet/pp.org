@@ -26,7 +26,7 @@ class CatalogueController extends Controller
         $photos = Photo::where('type', 'logo')->get();
         $companies = Company::where('b2b', 1)->where('verified', 1)->get();
         $filter = 0;
-        return view('catalogue',["companies"=>$companies,"photos"=>$photos,"tags"=>$tags,"title"=>"Catalogue","check"=>1,"filter"=>$filter]);
+        return view('catalogue2',["companies"=>$companies,"photos"=>$photos,"tags"=>$tags,"title"=>"Catalogue","check"=>1,"filter"=>$filter]);
 
     }
 
