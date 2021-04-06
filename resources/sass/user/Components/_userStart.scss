@@ -1,0 +1,98 @@
+.company-welcome {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: "logo name" "logo buttons";
+
+}
+/*div{*/
+/*    border: 2px solid black;*/
+/*}*/
+.usr-name {
+    grid-area: name;
+}
+
+.usr-header {
+    font-size: 6rem;
+    padding-left: 20px !important;
+    margin-top: 20px !important;
+    margin-left: 30px;
+    font-weight: bolder;
+}
+
+.usr-logo {
+
+    grid-area: logo;
+    width: 100% !important;
+    display: grid;
+    place-items: center;
+
+}
+
+.btn-group {
+    grid-area: buttons;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: space-around;
+}
+
+.usr-btn {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    margin: 10px 10px;
+}
+
+.fas {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.notes-info {
+    height: 40px !important;
+    padding: 0 20px;
+    line-height: 30px;
+    position: absolute;
+    right: 30px;
+    top: 60px;
+    z-index: 200;
+    background-color: #d43645;
+}
+
+.start-div {
+    position: relative;
+}
+
+@media(max-width: 1024px){
+    .usr-logo{
+        width: 50vw !important;
+        margin: 0 auto;
+    }
+    .usr-header{
+        text-align: center;
+        padding-left: 0 !important;
+        margin-left: 0;
+
+    }
+    .usr-btn{
+        font-size: 1rem;
+        padding: 10px 10px;
+        margin: 10px 5px;
+    }
+    .company-welcome {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo" "name" "buttons";
+
+    }
+    .notes-info{
+        width: 40px!important;
+        padding: 0;
+    }
+    .notes-info span{
+        display: none;
+    }
+}

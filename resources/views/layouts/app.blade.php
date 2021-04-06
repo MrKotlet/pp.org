@@ -27,12 +27,14 @@
     {{--    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;1,700&display=swap" rel="stylesheet">--}}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{mix('sass/app.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/style.css')}}">--}}
+
 
 
     <!-- Styles -->
     {{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+    <link rel="stylesheet" href="{{asset('sass/app.css')}}">
+    @stack('styles')
 </head>
 <body>
 <div id="overlay-back"></div>

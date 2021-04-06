@@ -1,0 +1,22 @@
+.notes-div{
+    padding: 40px;
+
+}
+.note-div{
+    position: relative;
+    padding: 10px;
+}
+.new{
+    height: 40px !important;
+    min-width: 60px !important;
+    position: absolute;
+    border-radius: 10px;
+    right: 20px;
+    top: 20px;
+    background-color: #d43645;
+}
+.new p{
+    color: white;
+    text-align: center;
+    padding: 8px;
+}

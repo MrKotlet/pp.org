@@ -81,17 +81,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
 
-        <link rel="stylesheet" href="{{asset('css/userpanel/tags/tagselector.css')}}">
+{{--        <link rel="stylesheet" href="{{asset('css/userpanel/tags/tagselector.css')}}">--}}
         <script src="{{ asset('js/userpanel/tags/tagselector.js') }}"></script>
-        <link rel="stylesheet" href="{{asset('css/userpanel/step2/profilepictures.css')}}">
+{{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/profilepictures.css')}}">--}}
         <script src="{{ asset('js/userpanel/step2/profilepictures.js') }}"></script>
-        <link rel="stylesheet" href="{{asset('css/userpanel/step2/namechanger.css')}}">
+{{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/namechanger.css')}}">--}}
         <script src="{{ asset('js/userpanel/step2/namechanger.js') }}"></script>
-        <link rel="stylesheet" href="{{asset('css/userpanel/step2/tagchanger.css')}}">
+{{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/tagchanger.css')}}">--}}
         <script src="{{ asset('js/userpanel/step2/tagchanger.js') }}"></script>
-        <link rel="stylesheet" href="{{asset('css/userpanel/step2/descriptionchanger.css')}}">
+{{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/descriptionchanger.css')}}">--}}
         <script src="{{ asset('js/userpanel/step2/descriptionchanger.js') }}"></script>
-        <link rel="stylesheet" href="{{asset('css/userpanel/step2/photocard.css')}}">
+{{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/photocard.css')}}">--}}
         <script src="{{ asset('js/userpanel/step2/photocard.js') }}"></script>
 
     @endpush

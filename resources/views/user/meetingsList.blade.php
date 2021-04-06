@@ -45,6 +45,6 @@
     </div>
 @endsection
 @push('scripts')
-    <link rel="stylesheet" href="{{asset('css/userpanel/meetingsList.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/userpanel/meetingsList.css')}}">--}}
 
 @endpush

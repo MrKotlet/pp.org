@@ -211,7 +211,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
     <link href="{{asset('lightbox/css/lightbox.css')}}" rel="stylesheet"/>
     <script src="{{ asset('lightbox/js/lightbox.js') }}"></script>
-    <link rel="stylesheet" href="{{asset('css/company.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/company.css')}}">--}}
 
     <script src="{{ asset('js/company.js') }}"></script>
     <script>lightbox.option({

@@ -1,0 +1,251 @@
+
+body {
+    overflow-x: hidden;
+}
+
+.company-all {
+    border-radius: 20px;
+    border-width: 2px !important;
+}
+
+.g-0 .shadow-lg {
+    border-color: #bc3034;
+    border-width: 2px;
+    transition: all 300ms;
+}
+
+.img-thumbnail {
+    margin: 10px 0;
+}
+
+
+.logo-badge {
+    margin-top: 30px;
+    width: 30vw;
+    height: 30vw;
+    max-height: 320px;
+    max-width: 320px;
+
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.company-face h1 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+}
+
+#gallery {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.gallery-all h3 {
+    font-size: 3rem;
+    margin: 20px 30px;
+}
+
+.gallery-img {
+    flex: 0 1 45%;
+    height: 30vh;
+
+}
+
+.company-info h2 .company-info p {
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.company-info p {
+    position: relative;
+    margin-right: 20px;
+}
+
+.company-buttons {
+    position: absolute;
+    right: 20px;
+    bottom: -10px;
+}
+
+.login-info {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    font-size: 12px;
+}
+
+.company-buttons a {
+    margin: 10px !important;
+    font-size: 1.5rem;
+}
+
+.company-info h2 {
+    font-size: 3rem;
+}
+
+.company-info .card-text {
+    margin-bottom: 55px;
+}
+
+
+.modal-backdrop {
+    display: none;
+    z-index: 1040 !important;
+}
+
+.modal-content {
+    margin: 2px auto;
+    z-index: 1100 !important;
+}
+
+.modal {
+    height: 100% !important;
+    width: 100%;
+
+}
+
+.modal-dialog {
+    /*height: 100% !important;*/
+    width: 200% !important;
+
+}
+
+.modal-content {
+    height: 100% !important;
+    width: 200% !important;
+
+    right: 50%;
+
+    transition: all 300ms;
+
+}
+
+.create-meeting-div {
+
+    padding: 30px;
+    position: fixed;
+    z-index: 10;
+    border: 10px solid dodgerblue;
+    border-radius: 30px;
+    right: -80%;
+    top: 50vh;
+    transform: translateY(-50%);
+    tab-index: -1;
+    background-color: dodgerblue;
+    width: 100%;
+    opacity: 0;
+    transition: all 300ms;
+    color: white;
+
+}
+
+.create-meeting-div hr {
+    border-color: white;
+}
+
+.div-positioning {
+
+
+    right: 50%;
+    top: 50vh;
+    transform: translate(50%, -50%);
+    opacity: 1;
+    transition: all 500ms;
+
+
+}
+
+#create-dates {
+    height: auto;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#create-dates div {
+    width: 200px;
+
+
+}
+
+.form-container {
+    padding-top: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.input-container {
+    font-size: 1.5rem;
+    line-height: 30px;
+    transition: all 500ms;
+    color: black;
+    cursor: pointer;
+    width: 100% !important;
+}
+
+.input-container p {
+    padding-top: 8px;
+
+}
+
+.input-invisible {
+    display: none !important;
+}
+
+.selected-hour {
+    font-weight: bold;
+    color: #3dcb00;
+
+}
+
+.form-container-active {
+    background-color: #549DEA;
+    color: white;
+}
+
+.form-container-inactive {
+    background-color: white;
+    color: #549DEA;
+    border-color: #549DEA !important;
+}
+
+.message small {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.message p {
+    margin-bottom: 0;
+}
+
+.message textarea {
+    width: 100%;
+}
+
+
+
+
+#lightboxOverlay{
+    top: -60px;
+}
+#lightbox{
+    top: 50vh !important;
+    transform: translateY(-50%) !important;
+}
+
+@media (min-width: 992px) {
+    .logo-badge {
+        height: 20vw;
+        width: 20vw;
+    }
+
+    .gallery-img {
+        flex-basis: 30%;
+    }
+
+    .form-container, .input-container {
+        font-size: 2rem;
+    }
+}

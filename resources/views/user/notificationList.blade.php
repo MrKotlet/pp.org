@@ -33,6 +33,6 @@
 @endsection
 
 @push('scripts')
-    <link rel="stylesheet" href="{{asset('css/userpanel/notesList.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/userpanel/notesList.css')}}">--}}
 
 @endpush

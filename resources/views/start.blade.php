@@ -6,7 +6,7 @@
         <div class="hero-shadow"></div>
         <div
             class="container h-100  text-light text-center ">
-            <div class="main-logo"></div>
+            <div class="main-logo" style="background-image: url(/imgcss/logod.svg);"></div>
             <p class="display-3">Polish Aviation and Automotive Parts</p>
             <p class="header-text">Online platform created for entrepreneurs</p>
             <div class="row justify-content-center mx-auto w-60">

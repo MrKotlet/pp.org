@@ -54,6 +54,6 @@
 
 @push('scripts')
 
-    <link rel="stylesheet" href="{{asset('css/userpanel/homenav.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/userpanel/homenav.css')}}">--}}
     <script src="{{ asset('js/userpanel/homenav.js') }}"></script>
 @endpush

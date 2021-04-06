@@ -80,6 +80,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
 
-    <link rel="stylesheet" href="{{asset('css/userpanel/meetingsForm.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/userpanel/meetingsForm.css')}}">--}}
     <script src="{{ asset('js/userpanel/meetingsForm.js') }}"></script>
 @endpush

@@ -59,8 +59,8 @@
 @endsection
 @push('scripts')
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{asset('css/userpanel/tags/tagselector.css')}}">
-    <link rel="stylesheet" href="{{asset('css/userpanel/step1.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/userpanel/tags/tagselector.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('css/userpanel/step1.css')}}">--}}
         <script src="{{ asset('js/userpanel/tags/tagselector.js') }}" ></script>
 
 
