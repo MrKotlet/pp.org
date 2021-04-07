@@ -1,17 +1,8 @@
 
 
-$('#logo-place').click(()=>{
-    $('#ex5').show();
-})
 
-$('[href="#ex3"]').click(()=>{
-    $('#ex3').show();
 
-})
-$('[href="#ex4"]').click(()=>{
-    $('#ex4').show();
 
-})
 
 $('#logo-place').mouseenter(()=>{
     $('#logo-place').addClass('logo-cir');

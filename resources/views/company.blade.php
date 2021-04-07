@@ -47,7 +47,7 @@
                 <br>
                 <h2>About the Company</h2>
                 <hr>
-                <p class="card-text">{{$company->opis}}</p>
+                <p class="card-text" >{{$company->opis}}</p>
                 <div class="company-buttons row justify-content-end">
                     @if(Auth::check())
                         @if($company->b2b)
@@ -86,17 +86,11 @@
                     @if($photo['type'] !=='logo')
 
                         <a href="{{asset ('companies/'.$company['id'].'/'.$photo['name'])}}"
-                           data-lightbox="{{$company->name}}" class="photo{{$photo->id}}"></a>
+                           data-lightbox="{{$company->name}}" class="photo{{$photo->id}} gallery-item"></a>
 
 
 
 
-                        {{--                        <div class="gallery-img">--}}
-                        {{--                            <img src="{{asset ('companies/'.$company['id'].'/'.$photo['name'])}}" class="img-thumbnail "--}}
-                        {{--                                 id="{{$photo->id}}" alt="...">--}}
-
-
-                        {{--                        </div>--}}
                     @endif
                 @endforeach
 
@@ -106,7 +100,7 @@
 
     </div>
 
-    <br><br><br><br><br>
+
     <!-- meeting form-->
     <div class="container mx-auto create-meeting-div ">
 

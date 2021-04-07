@@ -2,13 +2,23 @@
 #filter {
 
     margin-top: 20px;
-    border: 4px solid var(--light);
+    border: 4px solid var(--danger);
     padding: 0;
     height: 62px;
     border-radius: 5px;
     overflow: hidden;
     transition: all 200ms linear;
     max-height: 215px;
+
+    #fil1 {
+        cursor: pointer;
+        height: 54px;
+
+        .reset:hover {
+            color: var(--danger);
+        }
+    }
+
 }
 
 #filter p {
@@ -20,6 +30,7 @@
 
 .filter-tag, .reset {
     text-decoration: none !important;
+
 
 }
 
@@ -112,7 +123,7 @@ i {
 }
 
 .company:hover {
-    border: 4px solid red;
+    border: 4px solid var(--danger);
     box-shadow: 5px 5px #323A42;
 
 }

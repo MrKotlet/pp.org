@@ -51,7 +51,7 @@ section .display-3 {
     text-align: center;
     padding: 10px;
     overflow:hidden;
-    transition:background-color .3s  linear, flex-basis .3s linear;
+    transition:background-color .3s 400ms linear, flex-basis .4s 400ms linear;
 
 }
 

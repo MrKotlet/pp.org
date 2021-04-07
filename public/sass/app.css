@@ -91,6 +91,9 @@ footer {
   margin-top: 53px;
   left: 0;
 }
+#home.home-b2b {
+  margin-bottom: 40px;
+}
 
 #home div.container {
   padding: 30px;
@@ -413,7 +416,7 @@ section .display-3 {
   text-align: center;
   padding: 10px;
   overflow: hidden;
-  transition: background-color 0.3s linear, flex-basis 0.3s linear;
+  transition: background-color 0.3s 400ms linear, flex-basis 0.4s 400ms linear;
 }
 
 .event-small {
@@ -581,6 +584,7 @@ body {
 }
 
 .company-all {
+  margin-top: 70px;
   border-radius: 20px;
   border-width: 2px !important;
 }
@@ -615,15 +619,20 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+#gallery .gallery-item {
+  display: block;
+  flex-basis: 30vw;
+  height: 30vw;
+  flex-grow: 0;
+}
+#gallery .gallery-item:hover {
+  border: 4px solid var(--danger);
+  box-shadow: 5px 5px #323A42;
+}
 
 .gallery-all h3 {
   font-size: 3rem;
   margin: 20px 30px;
-}
-
-.gallery-img {
-  flex: 0 1 45%;
-  height: 30vh;
 }
 
 .company-info h2 .company-info p {
@@ -764,14 +773,21 @@ body {
   transform: translateY(-50%) !important;
 }
 
+@media (max-width: 992px) {
+  #gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  #gallery .gallery-item {
+    width: 40vh;
+    flex-basis: 40vh;
+    margin-bottom: 20px;
+  }
+}
 @media (min-width: 992px) {
   .logo-badge {
     height: 20vw;
     width: 20vw;
-  }
-
-  .gallery-img {
-    flex-basis: 30%;
   }
 
   .form-container, .input-container {
@@ -780,13 +796,20 @@ body {
 }
 #filter {
   margin-top: 20px;
-  border: 4px solid var(--light);
+  border: 4px solid var(--danger);
   padding: 0;
   height: 62px;
   border-radius: 5px;
   overflow: hidden;
   transition: all 200ms linear;
   max-height: 215px;
+}
+#filter #fil1 {
+  cursor: pointer;
+  height: 54px;
+}
+#filter #fil1 .reset:hover {
+  color: var(--danger);
 }
 
 #filter p {
@@ -881,7 +904,7 @@ i {
 }
 
 .company:hover {
-  border: 4px solid red;
+  border: 4px solid var(--danger);
   box-shadow: 5px 5px #323A42;
 }
 

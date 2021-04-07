@@ -36,16 +36,19 @@ $('.event-small').on("click", function(){
 
     const $a = $(this).siblings('.event-big').children('a').attr('href');
     window.location.assign("https://polishparts.org/"+$a)
+
     }else{
         const $p = $(this).parent()
         $p.toggleClass('active');
         if($p.hasClass('active')){
+console.log($p.hasClass('active'))
             $p.siblings('.calendar-event').animate({
                 height: 0,
                 padding: 0,
             },400);
         }else{
-            $p.siblings('.calendar-event').animate({
+            console.log($p.hasClass('active'))
+            $p.siblings('.calendar-event').delay(800).animate({
                 height: "100%",
                 padding: "10px",
             }, 400);

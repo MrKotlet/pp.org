@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <header id="home" style="background-image: url(imgcss/b2b.jpg);">
+    <header id="home" class="home-b2b" style="background-image: url(imgcss/b2b.jpg);">
         <div class="hero-shadow"></div>
         <div
             class="container h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">

@@ -4,6 +4,7 @@ body {
 }
 
 .company-all {
+    margin-top: 70px;
     border-radius: 20px;
     border-width: 2px !important;
 }
@@ -39,6 +40,20 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+
+    .gallery-item {
+        display: block;
+        flex-basis: 30vw;
+        height: 30vw;
+
+        flex-grow: 0;
+
+
+        &:hover {
+            border: 4px solid var(--danger);
+            box-shadow: 5px 5px #323A42;
+        }
+    }
 }
 
 .gallery-all h3 {
@@ -46,11 +61,7 @@ body {
     margin: 20px 30px;
 }
 
-.gallery-img {
-    flex: 0 1 45%;
-    height: 30vh;
 
-}
 
 .company-info h2 .company-info p {
     padding: 0 20px;
@@ -87,8 +98,6 @@ body {
 .company-info .card-text {
     margin-bottom: 55px;
 }
-
-
 
 
 .create-meeting-div {
@@ -195,25 +204,34 @@ body {
 }
 
 
-
-
-#lightboxOverlay{
+#lightboxOverlay {
     top: -60px;
 }
-#lightbox{
+
+#lightbox {
     top: 50vh !important;
     transform: translateY(-50%) !important;
 }
+@media(max-width: 992px){
+    #gallery{
+        flex-direction: column;
+        align-items: center;
+        .gallery-item{
+            width: 40vh;
+            flex-basis: 40vh;
+            margin-bottom: 20px;
+        }
 
+    }
+
+}
 @media (min-width: 992px) {
     .logo-badge {
         height: 20vw;
         width: 20vw;
     }
 
-    .gallery-img {
-        flex-basis: 30%;
-    }
+
 
     .form-container, .input-container {
         font-size: 2rem;

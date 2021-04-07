@@ -6,5 +6,5 @@ $('.modal-toggle').on("click",e=>{
 })
 $('#overlay-back, .modal-close').click(e=>{
     console.log(e.currentTarget);
-    $('#overlay-back, .my-modal').hide()
+    $('#overlay-back, .my-modal').fadeOut()
 })

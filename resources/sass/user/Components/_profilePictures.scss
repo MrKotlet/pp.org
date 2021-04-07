@@ -3,11 +3,13 @@
     width: 250px;
     height: 250px;
     border: 1px rgba(196, 170, 170, 0.5);
+    cursor: pointer;
 }
 .dodaj{
     transition: all 300ms linear;
     font-size: 2rem;
     text-decoration: none !important;
+    cursor: pointer;
 }
 .pic-div{
     transition: all 300ms;

@@ -83,8 +83,8 @@
                         </div>
                     </div>
                     @endif
-                @endforeach
 
+                @endforeach
 
             </div>
 
