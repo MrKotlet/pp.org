@@ -110,6 +110,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container 2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/string 2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper 2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console 2" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

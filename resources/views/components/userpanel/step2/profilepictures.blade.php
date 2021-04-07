@@ -19,7 +19,7 @@
 
 
 
-        <a href="#ex5" rel="modal:open" class="dodaj">
+        <a  class="dodaj modal-toggle" data-modal="#ex5">
 
             <div id="logo-place" class=" d-flex align-items-center justify-content-center mx-5 my-auto" >
                 @if($logo)
@@ -42,47 +42,48 @@
 {{--logo modal--}}
 
 
-<div id="ex5" class="modal">
-    <div class="modal-content">
-        <h4>Add Logo from disc</h4>
-        <br>
-        <div class="form-group my-auto">
-            <div class="form-group my-auto">
-                @if($logo)
-                    <form action="{{ action ('HomeController@change')}}" method="POST" role="form" enctype="multipart/form-data">
-
-                        @csrf
-                        <input type="hidden" value="{{$company['id']}}" name="id">
-                        <input type="hidden" value="{{$logo['id']}}" name="photoid">
-                        <input type="hidden" value="{{$logo['name']}}" name="photoname">
-                        <input name="changel" type="file" class="form-control-file" id="changel">
-                        @else
-                            <form action="{{ action ('HomeController@storemedia')}}" method="POST" role="form" enctype="multipart/form-data">
-
-                                @csrf
-                                <input type="hidden" value="{{$company['id']}}" name="id">
-                                <input type="hidden" value="logo" name="type">
-                                <input class="form-control-file" id="formFileSm" type="file" name="photo">
-                                @endif
-
-                                <br>
-                                <button type="submit" class="btn btn-primary">save</button>
-                                <br>
-                            </form>
-
-            </div>
 
 
 
+
+<div id="ex5" class="my-modal">
+    <div class="wrapper">
+
+        <div>
+
+            <h4>Add Logo from disc</h4>
 
         </div>
+
+        <div class="f-div">
+
+            @if($logo)
+                <form action="{{ action ('HomeController@change')}}" method="POST" role="form" enctype="multipart/form-data">
+
+                    @csrf
+                    <input type="hidden" value="{{$company['id']}}" name="id">
+                    <input type="hidden" value="{{$logo['id']}}" name="photoid">
+                    <input type="hidden" value="{{$logo['name']}}" name="photoname">
+                    <input name="changel" type="file" class="form-control-file" id="changel">
+                    @else
+                        <form action="{{ action ('HomeController@storemedia')}}" method="POST" role="form" enctype="multipart/form-data">
+
+                            @csrf
+                            <input type="hidden" value="{{$company['id']}}" name="id">
+                            <input type="hidden" value="logo" name="type">
+                            <input class="form-control-file" id="formFileSm" type="file" name="photo">
+                            @endif
+
+                            <br>
+                            <button type="submit" class="btn btn-primary">save</button>
+                            <br>
+                        </form>
+
+        </div>
+        <div class="modal-close"><i class="fas fa-times"></i></div>
+
     </div>
-
 </div>
-
-
-
-
 
 
 

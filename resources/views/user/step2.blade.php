@@ -78,9 +78,8 @@
 
     @push('scripts')
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 {{--        <link rel="stylesheet" href="{{asset('css/userpanel/tags/tagselector.css')}}">--}}
         <script src="{{ asset('js/userpanel/tags/tagselector.js') }}"></script>
 {{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/profilepictures.css')}}">--}}
@@ -93,7 +92,7 @@
         <script src="{{ asset('js/userpanel/step2/descriptionchanger.js') }}"></script>
 {{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/photocard.css')}}">--}}
         <script src="{{ asset('js/userpanel/step2/photocard.js') }}"></script>
-
+        <script src="{{ asset('js/userpanel/modal.js') }}"></script>
     @endpush
 
 

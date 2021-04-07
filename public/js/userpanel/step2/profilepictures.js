@@ -17,7 +17,7 @@ $('#logo-place').mouseenter(()=>{
     $('#logo-place').addClass('logo-cir');
     $('.pic-div').removeClass('pic-div-red');
 
-    $('#logo-place').children('img').addClass('d-none');
+
     $('#logo-place').children('i').removeClass('d-none');
     $('#logo-place').children('p').removeClass('d-none');
 })
@@ -28,11 +28,11 @@ $('#logo-place').mouseleave(()=>{
     $('.pic-div').addClass('pic-div-red');
 
 
-    if($('#logo-place').children('img').hasClass('w-100')){
-        $('#logo-place').children('img').removeClass('d-none');
+
+
         $('#logo-place').children('i').addClass('d-none');
         $('#logo-place').children('p').addClass('d-none');
-    }
+
 })
 
 

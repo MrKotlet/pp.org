@@ -24,7 +24,7 @@
             </div>
                     @else
                     <div class="card-body add-other">
-                        <a href="#ex4" rel="modal:open" class="dodaj ">
+                        <a href="#ex4" rel="modal:open" class="dodaj modal-toggle" data-modal="#ex4">
                             <i class="fas fa-plus"></i>
                             <p class="dodaj">Add photo</p>
                         </a>
@@ -34,36 +34,42 @@
 
 
 </div>
+{{--modal--}}
 
 
-            <div id="ex4" class="modal">
-                <div class="modal-content">
-                    <h4>Add photo from your disc</h4>
-                    <br>
-                    <div class="form-group my-auto">
+<div id="ex4" class="my-modal">
+    <div class="wrapper">
 
+        <div>
 
-                                    <form action="{{ action ('HomeController@storemedia')}}" method="POST" role="form" enctype="multipart/form-data">
+            <h4>Add photo from your disc</h4>
 
-                                        @csrf
-                                        <input type="hidden" value="{{$company['id']}}" name="id">
+        </div>
 
-                                        @if(!$company->photos()->first())
-                                            <input type="hidden" value="main" name="type">
+        <div class="f-div">
 
-                                        @else
-                                            <input type="hidden" value="other" name="type">
+            <form action="{{ action ('HomeController@storemedia')}}" method="POST" role="form" enctype="multipart/form-data">
 
-                                        @endif
+                @csrf
+                <input type="hidden" value="{{$company['id']}}" name="id">
 
-                                        <input class="form-control-file" id="formFileSm" type="file" name="photo">
+                @if(!$company->photos()->first())
+                    <input type="hidden" value="main" name="type">
 
-                                        <br>
-                                        <button type="submit" class="btn btn-primary">save</button>
-                                        <br>
-                                    </form>
+                @else
+                    <input type="hidden" value="other" name="type">
 
-                    </div>
-                </div>
+                @endif
 
-            </div>
+                <input class="form-control-file" id="formFileSm" type="file" name="photo">
+
+                <br>
+                <button type="submit" class="btn btn-primary">save</button>
+                <br>
+            </form>
+
+        </div>
+        <div class="modal-close"><i class="fas fa-times"></i></div>
+
+    </div>
+</div>
