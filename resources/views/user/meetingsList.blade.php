@@ -29,8 +29,8 @@
                                 <button class="btn-lg btn-primary">meeting room</button>
                             </a>
                             <br>
-                            <a href="/meetnope/{{$meet->id}}">
-                                <button class="btn btn-danger">Cancel</button>
+                            <a data-modal="{{$meet->id}}" class="meet-cancel">
+                                <button class="btn btn-outline-danger">Cancel</button>
                             </a>
                         </div>
 
@@ -43,8 +43,35 @@
 
         @endif
     </div>
+    {{--modal--}}
+
+
+    <div  class="my-modal confirmation">
+        <div class="wrapper">
+
+            <div>
+
+                <h4>Are You sure?</h4>
+
+            </div>
+
+            <div class="">
+                <a href="/meetnope/{{$meet->id}}" class="delete">
+                    <button class="btn btn-outline-danger">Yes</button>
+                </a>
+                <a class="confirmation-close">
+                    <button class="btn btn-primary">No</button>
+                </a>
+
+
+            </div>
+            <div class="modal-close"><i class="fas fa-times"></i></div>
+
+        </div>
 @endsection
 @push('scripts')
-{{--    <link rel="stylesheet" href="{{asset('css/userpanel/meetingsList.css')}}">--}}
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="{{ asset('js/userpanel/modal.js') }}"></script>
 
 @endpush

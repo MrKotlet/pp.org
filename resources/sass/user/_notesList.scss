@@ -1,22 +1,70 @@
-.notes-div{
-    padding: 40px;
+$light : #d2cfcf;
 
+hr{
+    border-color: $light;
 }
-.note-div{
+
+
+.note-div {
     position: relative;
     padding: 10px;
+    display: flex;
+
+    .meet-note {
+        flex-basis: 50%;
+
+        margin-right: 20px;
+        &.meet-answer{
+            flex-basis: 100%;
+            flex-grow: 1;
+            border-right: none;
+        }
+        h4{
+            font-size: 2.5rem;
+        }
+        .meet-info {
+            color: var(--danger);
+        }
+    }
+    .note-delete{
+        position: absolute;
+        color: $light;
+        text-decoration: none;
+        font-weight: bold;
+        top: 10px;
+        right: 20px;
+        &:hover{
+            color: var(--danger);
+        }
+    }
+
 }
-.new{
+
+.new {
     height: 40px !important;
     min-width: 60px !important;
     position: absolute;
     border-radius: 10px;
     right: 20px;
     top: 20px;
-    background-color: #d43645;
+    background-color: var(--danger)
+
+    p {
+        color: white;
+        text-align: center;
+        padding: 8px;
+    }
 }
-.new p{
-    color: white;
-    text-align: center;
-    padding: 8px;
+
+@media (max-width: 700px) {
+    .note-div{
+        flex-direction: column;
+        .meet-note{
+            border-right: none;
+            border-bottom: 1px solid $light;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
 }

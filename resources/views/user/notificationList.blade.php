@@ -2,15 +2,19 @@
 
 @section('usercontent')
 
+    <div class="col-12 col-lg-10 notes-div">
+        <h3 class="p-4 display-2">Notifications</h3>
+        <hr>
 
-    @if($notes->isEmpty())
 
-        <h3>You don't have any notifications</h3>
-    @else
+        @if($notes->isEmpty())
+            <div class="p-4">
+                <h3>You don't have any notifications</h3>
+            </div>
+        @else
 
-        <div class="col-12 col-lg-10 notes-div">
-            <h2>Notifications</h2>
-            <hr>
+
+
             @foreach($notes as $note)
                 @if($note->subject == "meetprop")
                     <x-notes.meet-prop :note="$note"/>
@@ -19,20 +23,20 @@
                 @endif
             @endforeach
 
-        </div>
 
 
 
 
 
-    @endif
 
+        @endif
 
+    </div>
 
 
 @endsection
 
 @push('scripts')
-{{--    <link rel="stylesheet" href="{{asset('css/userpanel/notesList.css')}}">--}}
+
 
 @endpush

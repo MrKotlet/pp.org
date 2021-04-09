@@ -1,17 +1,24 @@
 <div class="note-div">
+    <div class="meet-note meet-answer">
+
 
     @if($note->subject=='meetok')
-        <h3> {{$note->meeting->company->name}} accepted your meeting offer- Date: {{$note->meeting->date}},
-            Time: {{$note->meeting->hours}}</h3>
+            <h4 >{{$note->meeting->user->name}} accepted your meeting offer!</h4>
+            <p class="meet-info">Date: {{$note->meeting->date}},
+                Time: {{$note->meeting->hours}}</p>
+
     @else
-        <h3> {{$note->meeting->company->name}} declined your meeting offer- Date: {{$note->meeting->date}},
-            Time: {{$note->meeting->hours}}</h3>
+            <h4 >{{$note->meeting->user->name}} declined your meeting offer!</h4>
+            <p class="meet-info">Date: {{$note->meeting->date}},
+                Time: {{$note->meeting->hours}}</p>
+
     @endif
 
-    <div><a href="/notedelete/{{$note->id}}">X</a> </div>
-
+    <div><a href="/notedelete/{{$note->id}}" class="note-delete">X</a> </div>
+    </div>
     @if($note->age == 'new')
         <div class="new"><p>new!</p></div>
     @endif
-    <hr>
+
 </div>
+    <hr>

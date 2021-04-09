@@ -11,7 +11,7 @@
 
 
         <div class="step-all col-12 row">
-            <div class="step2-face col-12 col-lg-5 g-0">
+            <div class="step2-face col-12 col-lg-5 g-0 ">
 
                 <h3 class="some-space">Company Logo</h3>
 

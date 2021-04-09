@@ -1,5 +1,12 @@
 @extends('layouts.app')
+<style>
+    @foreach($photos as $photo)
+    .{{$photo->company->name}} {
+        background-image: url({{asset ('companies/'.$photo->company->id.'/'.$photo['name'])}})
 
+    }
+    @endforeach
+</style>
 @section('content')
 
     <header id="home" class="home-b2b" style="background-image: url(imgcss/b2b.jpg);">
@@ -62,18 +69,6 @@
 
     </section>
 
-    {{--    <section id="listafirm">--}}
-    {{--        @foreach($companies as $company)--}}
-    {{--            <div class="firma">--}}
-    {{--                <a href="company/{{$company['id']}}"><img class="logofirmy" src="storage/companies/{{$company['id']}}/logo.svg" alt="logo firmy"></a>--}}
-    {{--                <p class="category">Category: Jewellery</p>--}}
-    {{--                <h3 class="nazwafirmy">{{$company->name}}</h3>--}}
-    {{--                <p class="opisfirmy">{{$company->opis}}</p>--}}
-    {{--                <br>--}}
-    {{--                <a class="more" href="/company/{{$company['id']}}">More</a>--}}
-    {{--            </div>--}}
-    {{--            <br>--}}
-    {{--    @endforeach--}}
 
 @endsection
 @push('scripts')

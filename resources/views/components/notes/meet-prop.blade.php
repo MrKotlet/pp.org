@@ -1,13 +1,10 @@
 <div class="note-div">
-    <h3>New meeting proposal from {{$note->meeting->user->name}} - Date: {{$note->meeting->date}},
-        Time: {{$note->meeting->hours}}</h3>
+    <div class="meet-note">
+    <h4 >New meeting proposal from {{$note->meeting->user->name}}!</h4>
+    <p class="meet-info">Date: {{$note->meeting->date}},
+        Time: {{$note->meeting->hours}}</p>
 
-    @if($note->message)
-        <br>
-        <h4>Message</h4>
-        <p>{{$note->message}}</p>
-    @endif
-    <br>
+
     @if($note->meeting->status == 'accepted')
         <div>
             <p>The meeting was accepted</p>
@@ -27,9 +24,17 @@
             </a>
         </div>
     @endif
-
+    </div>
+    @if($note->message)
+        <div class="meet-message">
+            <h2>Message from {{$note->meeting->user->name}} </h2>
+            <hr>
+            <p>{{$note->message}}</p>
+        </div>
+    @endif
     @if($note->age == 'new')
         <div class="new"><p>new!</p></div>
     @endif
-    <hr>
+
 </div>
+<hr>

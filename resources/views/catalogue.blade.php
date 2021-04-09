@@ -15,7 +15,7 @@
             class="container h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
             <p class="display-sm-1 display-2">Catalogue</p>
 
-            {{--            <a href="#aboutus" class="btn btn-outline-light">poznaj nas</a>--}}
+
         </div>
     </header>
 
