@@ -41,13 +41,14 @@ $('.input-container').click(event=>{
     $data = $(event.currentTarget).attr("id");
     $data = "."+$data;
     $datas = $data+"h";
-    $(event.currentTarget).toggleClass('selected-hour');
+    $(event.currentTarget).addClass('selected-hour');
     $(event.currentTarget).siblings('.input-container').removeClass('selected-hour');
     $(event.currentTarget).siblings('.input-container').children('.fa-dot-circle').removeClass('d-none');
     $(event.currentTarget).siblings('.input-container').children('.fa-check-circle').addClass('d-none');
     $(event.currentTarget).children('i').toggleClass('d-none');
     $(event.currentTarget).children('#hours').prop('checked', true);
     $($datas).removeClass('d-none').siblings('.hour').addClass('d-none');
+    $('.btn-outline-light').removeClass('btn-outline-light').addClass('btn-success').prop('disabled',false)
 })
 
 

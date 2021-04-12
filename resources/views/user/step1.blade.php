@@ -10,16 +10,16 @@
             <h3 class="">Company Profile Creator</h3>
             <h2 class="">Step 1: Company Info</h2>
             <div class="">
-                <form action="{{ action ('HomeController@store')}}" method="POST" role="form">
+                <form action="{{ action ('HomeController@store')}}" method="POST" role="form" id="step1"  data-parsley-validate>
                     @csrf
                     <div class="form-group mb-2">
                         <label for="name">Company Name</label>
-                        <input type="text" placeholder="podaj nazwę firmy" class="form-control" id="name" name="name" required>
+                        <input type="text" placeholder="company name" class="form-control" id="name" name="name" required data-parsley-type="alphanum">
                     </div>
 
                     <div class="form-group mb-2">
                         <label for="homepage">Official homepage address</label>
-                        <input type="text" placeholder="adres strony" class="form-control" id="homepage" name="homepage" required>
+                        <input type="url" placeholder="homepage url" class="form-control" id="homepage" name="homepage" required>
                     </div>
 
                     <p>What does your company do?</p>
@@ -62,7 +62,10 @@
 {{--    <link rel="stylesheet" href="{{asset('css/userpanel/tags/tagselector.css')}}">--}}
 {{--    <link rel="stylesheet" href="{{asset('css/userpanel/step1.css')}}">--}}
         <script src="{{ asset('js/userpanel/tags/tagselector.js') }}" ></script>
-
+    <script src="{{asset('js/parsley/parsley.js')}}"></script>
+    <script>
+        $('#step1').parsley();
+    </script>
 
 @endpush
 

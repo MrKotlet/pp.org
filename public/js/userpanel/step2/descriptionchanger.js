@@ -1,6 +1,7 @@
 $('.slide').children('button').click(()=>{
     $('.desc-form').show();
-    $('.slide').hide()
+    $('.slide').hide();
+    $('.description').hide()
 })
 $('.switch').children('button').click(()=>{
     $('.description').hide()

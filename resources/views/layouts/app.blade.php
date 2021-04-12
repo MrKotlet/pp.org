@@ -15,7 +15,7 @@
     </title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
     <script src="https://kit.fontawesome.com/69a4af31de.js" crossorigin="anonymous"></script>
 
 

@@ -1,3 +1,6 @@
+
+
+
 $('.form-toggler').click(()=>{
     $('.form-toggler').toggleClass('btn-success');
     $('.form-toggler').toggleClass('btn-outline-success')
@@ -10,8 +13,10 @@ $('.input-div').click(event=>{
 
     if($(event.currentTarget).hasClass('input-checked')){
         $(event.currentTarget).children('.hour-input').prop('checked', true);
+
     }else {
         $(event.currentTarget).children('.hour-input').prop('checked', false);
+
     }
 
 

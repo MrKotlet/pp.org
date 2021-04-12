@@ -44,11 +44,12 @@
 
             <h4>Add photo from your disc</h4>
 
+
         </div>
 
         <div class="f-div">
 
-            <form action="{{ action ('HomeController@storemedia')}}" method="POST" role="form" enctype="multipart/form-data">
+            <form action="{{ action ('HomeController@storemedia')}}" method="POST" role="form" enctype="multipart/form-data" id="form2">
 
                 @csrf
                 <input type="hidden" value="{{$company['id']}}" name="id">
@@ -61,7 +62,8 @@
 
                 @endif
 
-                <input class="form-control-file" id="formFileSm" type="file" name="photo">
+                <input class="form-control-file" id="formFileSm" type="file" name="photo" onchange="ValidateSize(this, 2)">
+                <p>(max size 5mb, accepted extensions: svg, jpg, png)</p>
 
                 <br>
                 <button type="submit" class="btn btn-primary">save</button>

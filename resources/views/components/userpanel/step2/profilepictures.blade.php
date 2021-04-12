@@ -53,34 +53,35 @@
 
             <h4>Add Logo from disc</h4>
 
+
         </div>
 
         <div class="f-div">
 
             @if($logo)
-                <form action="{{ action ('HomeController@change')}}" method="POST" role="form" enctype="multipart/form-data">
+                <form action="{{ action ('HomeController@change')}}" method="POST" role="form" enctype="multipart/form-data" id="form1">
 
                     @csrf
                     <input type="hidden" value="{{$company['id']}}" name="id">
                     <input type="hidden" value="{{$logo['id']}}" name="photoid">
                     <input type="hidden" value="{{$logo['name']}}" name="photoname">
-                    <input name="changel" type="file" class="form-control-file" id="changel">
-                    <br>
+                    <input name="changel" type="file" class="form-control-file" id="changel" onchange="ValidateSize(this, 1)">
+                    <p>(max size 5mb, accepted extensions: svg, jpg, png)</p>
                     <button type="submit" class="btn btn-primary">save</button>
                     <br>
                 </form>
                     @else
-                        <form action="{{ action ('HomeController@storemedia')}}" method="POST" role="form" enctype="multipart/form-data">
+                        <form action="{{ action ('HomeController@storemedia')}}" method="POST" role="form" enctype="multipart/form-data" id="form1">
 
                             @csrf
                             <input type="hidden" value="{{$company['id']}}" name="id">
                             <input type="hidden" value="logo" name="type">
-                            <input class="form-control-file" id="formFileSm" type="file" name="photo">
+                            <input class="form-control-file" id="formFileSm" type="file" name="photo" onchange="ValidateSize(this, 1)">
 
-
+                            <p>(max size 5mb, accepted extensions: svg, jpg, png)</p>
 
                             <button type="submit" class="btn btn-primary">save</button>
-                            <br>
+
                         </form>
             @endif
         </div>

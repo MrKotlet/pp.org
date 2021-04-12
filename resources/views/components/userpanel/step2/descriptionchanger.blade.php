@@ -12,14 +12,14 @@
     @endif
   <div class="desc-form">
 
-      <form action="{{ action ('HomeController@description')}}" method="POST" role="form">
+      <form action="{{ action ('HomeController@description')}}" method="POST" role="form" id="description-changer">
           @csrf
           <input type="hidden" value="{{$company['id']}}" name="id">
           <div class="form-group">
               @if($company->opis == '')
-              <textarea  name="opis" class="form-control textarea" id="exampleFormControlTextarea1">Add description (max 300 words)</textarea>
+              <textarea  name="opis" class="form-control textarea" id="exampleFormControlTextarea1" minlength="50" maxlength="500" required data-parsley-trigger="keyup" data-parsley-minlength="50" data-parsley-maxlength="500">Add description (max 300 words)</textarea>
               @else
-                  <textarea  name="opis" class="form-control textarea" id="exampleFormControlTextarea1">{{$company->opis}}</textarea>
+                  <textarea  name="opis" class="form-control textarea" id="exampleFormControlTextarea1" minlength="50" maxlength="500" required data-parsley-trigger="keyup" data-parsley-minlength="50" data-parsley-maxlength="500">{{$company->opis}}</textarea>
                   @endif
           </div>
           <button type="submit" class="btn btn-primary">save</button>

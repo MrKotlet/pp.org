@@ -79,20 +79,110 @@
     @push('scripts')
 
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-{{--        <link rel="stylesheet" href="{{asset('css/userpanel/tags/tagselector.css')}}">--}}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
         <script src="{{ asset('js/userpanel/tags/tagselector.js') }}"></script>
-{{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/profilepictures.css')}}">--}}
+
         <script src="{{ asset('js/userpanel/step2/profilepictures.js') }}"></script>
-{{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/namechanger.css')}}">--}}
+
         <script src="{{ asset('js/userpanel/step2/namechanger.js') }}"></script>
-{{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/tagchanger.css')}}">--}}
+
         <script src="{{ asset('js/userpanel/step2/tagchanger.js') }}"></script>
-{{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/descriptionchanger.css')}}">--}}
-        <script src="{{ asset('js/userpanel/step2/descriptionchanger.js') }}"></script>
-{{--        <link rel="stylesheet" href="{{asset('css/userpanel/step2/photocard.css')}}">--}}
+
         <script src="{{ asset('js/userpanel/step2/photocard.js') }}"></script>
         <script src="{{ asset('js/userpanel/modal.js') }}"></script>
+
+
+        <script src="{{asset('js/parsley/parsley.js')}}"></script>
+        <script>
+
+    $('#step1, #name-changer, #description-changer').parsley();
+
+
+
+            let flag1 = false;
+            let flag2 = false;
+
+            const form1 = document.getElementById('form1');
+            const form2 = document.getElementById('form2');
+
+            const btn1 = document.querySelector('#form1 .btn');
+            const btn2 = document.querySelector('#form2 .btn');
+
+            function ValidateSize(file, id) {
+                var FileSize = file.files[0].size; // in MiB
+                let fileType = file.files[0].type;
+                const maxSize = 5242880;
+                const extensions = ["image/svg+xml", "image/jpeg", "image/png"];
+                let formId = id;
+                console.log(FileSize)
+                if (extensions.includes(fileType) && FileSize < maxSize) {
+                    console.log("jest git")
+                 if(flag1 || flag2){
+
+
+                     btn2.classList.remove('disabled');
+                     btn2.disabled = false;
+                     btn1.classList.remove('disabled');
+                     btn1.disabled = false;
+                     p = document.querySelector('.error');
+                     p.remove();
+
+                 }
+
+
+                } else {
+                    let p
+                    if (formId === 1) {
+
+                        if (flag1) {
+                            p = document.querySelector('.error');
+
+
+                        } else {
+                            p = document.createElement('p');
+                            p.style.color = "red";
+                        }
+                    } else {
+                        if (flag2) {
+                            p = document.querySelector('.error');
+
+
+                        } else {
+                            p = document.createElement('p');
+                            p.style.color = "red";
+                        }
+                    }
+
+
+                    p.classList.add('error')
+                    if (extensions.includes(fileType)) {
+                        p.textContent = "file is to big"
+                    } else {
+                        p.textContent = "file type not supported"
+                    }
+
+                    if (formId === 1) {
+                        flag1 = true;
+                        btn1.classList.add('disabled');
+                        btn1.disabled = true
+                        form1.appendChild(p);
+                    } else {
+                        flag2 = true;
+                        btn2.classList.add('disabled');
+                        btn2.disabled = true
+                        form2.appendChild(p);
+                    }
+
+
+                    $(file).val('');
+                }
+            }
+
+
+        </script>
+        <script src="{{ asset('js/userpanel/step2/descriptionchanger.js') }}"></script>
     @endpush
 
 

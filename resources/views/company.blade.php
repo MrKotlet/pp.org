@@ -50,7 +50,7 @@
                 <p class="card-text">{{$company->opis}}</p>
                 <div class="company-buttons row justify-content-end">
                     @if(Auth::check())
-                        @if($company->b2b)
+                        @if($company->b2b && !($company->user->id === Auth::id()) && $meetCheck)
                             <a href="#" class="btn btn-primary d-flex flex-wrap align-items-center open-form">Offer a
                                 meeting</a>
                             <a href="#" class="btn btn-success  flex-wrap align-items-center d-none">Send a message</a>
@@ -133,7 +133,7 @@
 
                                     <div
                                         class="d-flex align-items-center justify-content-around input-container input-invisible"
-                                        id="{{$hour->id}}">
+                                        id="{{$hour->id}}" >
                                         <p>{{$hour->hours}}</p>
 
                                         <i class="fas fa-dot-circle"></i>
@@ -183,8 +183,8 @@
 
 
             <div>
-                <button type="submit" class="btn-lg btn-success">Offer a meeting</button>
-                <button type="submit" class="btn-lg btn-danger close-form">Cancel</button>
+                <button type="submit" class="btn-lg btn-outline-light " disabled>Offer a meeting</button>
+                <button  class="btn-lg btn-danger close-form">Cancel</button>
 
             </div>
         </form>
