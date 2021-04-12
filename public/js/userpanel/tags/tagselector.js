@@ -5,9 +5,9 @@ $('.tag-i').click(event => {
 
     if ($(event.currentTarget).hasClass('tag-active')) {
         $(event.currentTarget).siblings('.form-control').prop('checked', true);
-        $(event.currentTarget).children('.fspan').removeClass('d-none');
+        $(event.currentTarget).children('.fas').removeClass('d-none');
     } else {
         $(event.currentTarget).siblings('.form-control').prop('checked', false);
-        $(event.currentTarget).children('.fspan').addClass('d-none');
+        $(event.currentTarget).children('.fas').addClass('d-none');
     }
 });

@@ -9,6 +9,98 @@
   padding: 0;
 }
 
+.my-modal {
+  position: fixed;
+  z-index: 333;
+  width: 60vw;
+  height: 60vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 3px solid var(--danger);
+  border-radius: 10px;
+  display: none;
+}
+.my-modal.confirmation {
+  width: 20vw;
+  height: 20vh;
+}
+
+#ex4, #ex5 {
+  height: auto;
+  min-height: 20vh;
+  width: 40vw;
+}
+#ex4 .f-div, #ex5 .f-div {
+  overflow: auto;
+}
+#ex4 .f-div .form-control-file, #ex5 .f-div .form-control-file {
+  margin-bottom: 30px;
+}
+#ex4 .f-div .row, #ex5 .f-div .row {
+  overflow: auto;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper div h4 {
+  padding: 40px;
+  font-size: 2rem;
+}
+.wrapper div form {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 80%;
+}
+.wrapper div form .row {
+  overflow: scroll;
+}
+.wrapper .f-div {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 40px 40px 40px;
+  align-self: stretch;
+  overflow: scroll;
+}
+.wrapper .modal-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 100%;
+  top: 0%;
+  background-color: var(--danger);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.wrapper .modal-close i {
+  display: block;
+  color: white;
+  margin-bottom: 0;
+  line-height: 0;
+}
+
+#overlay-back {
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .my-modal {
+    width: 100vw;
+  }
+}
 hr {
   border-color: #d2cfcf;
 }
@@ -100,6 +192,14 @@ hr {
 
 .input-div {
   border-bottom: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.input-div i {
+  margin: 0;
+  padding-top: 8px;
 }
 
 .input-checked {
@@ -122,6 +222,10 @@ hr {
   overflow: hidden;
   border-radius: 20px;
   margin-top: 10px;
+}
+.form-inside .p-0 {
+  flex-basis: 30%;
+  flex-grow: 1;
 }
 
 @media (max-width: 1024px) {
@@ -182,7 +286,6 @@ hr {
   left: 0;
   padding: 0;
   margin: 0 !important;
-  height: calc(100vh - 53px);
   border-bottom: none !important;
   border-top: none !important;
   border-left: none !important;
@@ -228,6 +331,7 @@ hr {
     left: -66.666667vw;
     border-right: none !important;
     top: 38px;
+    height: calc(100vh - 53px);
   }
 
   .nav-div.active {
@@ -342,12 +446,22 @@ hr {
     display: none;
   }
 }
-.tag-i {
+.tag-i, .tag-static {
   cursor: pointer;
   min-width: 60px !important;
-  height: 40px;
-  border-radius: 20px;
+  height: 30px;
+  border-radius: 4px;
   margin: 0 5px;
+  display: flex;
+  align-items: center;
+}
+.tag-i p, .tag-static p {
+  padding: 5px 8px;
+  margin: 0;
+}
+.tag-i i, .tag-static i {
+  margin: 0;
+  padding-top: 9px;
 }
 
 .tag-non {
@@ -358,26 +472,14 @@ hr {
   background-color: #299207;
   border-color: #299207;
 }
-
-.tag-active p {
+.tag-active p, .tag-active i {
   font-weight: bold;
   color: white;
-}
-
-.tag-i p {
-  padding: 5px 8px;
-}
-
-.fspan i {
-  font-size: 2rem;
-  padding-right: 4px;
-  padding-top: 4px;
 }
 
 .tag-div {
   transition: all 2s ease-out;
 }
-
 .tag-div input {
   display: none;
 }
@@ -391,16 +493,15 @@ hr {
   vertical-align: middle;
 }
 
-.tag-static {
-  cursor: pointer;
-  min-width: 60px !important;
-  height: 40px;
-  border-radius: 20px;
-  margin: 0 5px;
+.tag-modal {
+  height: auto;
+  min-height: 20vh;
 }
-
-.tag-static p {
-  padding: 6px 8px;
+.tag-modal .f-div {
+  overflow: auto;
+}
+.tag-modal .f-div .row {
+  overflow: auto;
 }
 
 #logo-place {
@@ -526,82 +627,4 @@ hr {
   width: 100%;
   min-height: 300px !important;
   font-size: 1.5rem;
-}
-
-.my-modal {
-  position: fixed;
-  z-index: 333;
-  width: 60vw;
-  height: 60vh;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border: 3px solid var(--danger);
-  border-radius: 10px;
-  display: none;
-}
-.my-modal.confirmation {
-  width: 20vw;
-  height: 20vh;
-}
-
-.wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.wrapper div h4 {
-  padding: 40px;
-  font-size: 2rem;
-}
-.wrapper div form {
-  flex-grow: 1;
-  flex-shrink: 1;
-  display: flex;
-  flex-direction: column;
-  flex-basis: 80%;
-}
-.wrapper div form .row {
-  overflow: scroll;
-}
-.wrapper .f-div {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  margin: 0px 40px 40px 40px;
-  align-self: stretch;
-  overflow: scroll;
-}
-.wrapper .modal-close {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  left: 100%;
-  top: 0%;
-  background-color: var(--danger);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.wrapper .modal-close i {
-  display: block;
-  color: white;
-  margin-bottom: 0;
-  line-height: 0;
-}
-
-#overlay-back {
-  z-index: 1;
-}
-
-@media (max-width: 700px) {
-  .my-modal {
-    width: 100vw;
-  }
 }

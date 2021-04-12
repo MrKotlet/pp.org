@@ -9,7 +9,7 @@
 $(window).scroll(() => {
     let ws = window.scrollY;
     let wh = window.innerHeight;
-    const $jumbo = $('.jumbotron')
+    const $jumbo = $('.jumbo-slide')
     const $jo = $jumbo.offset().top;
     const $jh = $jumbo.height();
     if (ws === 0) {

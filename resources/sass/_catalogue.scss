@@ -95,7 +95,7 @@
     width: 100%;
     /*height: calc(20vh - 60px);*/
     height: calc(100% - 62px);
-    overflow: scroll;
+    overflowY: scroll;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;

@@ -120,7 +120,7 @@
 
         </section>
 
-        <div class="jumbotron bg-danger d-flex flex-column">
+        <div class="jumbotron jumbo-slide bg-danger d-flex flex-column">
             <h1 class="display-4 text-light">Polish companies</h1>
             <p class="text-light checkex">If you want to find out more about Polish companies, check the "Catalogue"
                 section</p>

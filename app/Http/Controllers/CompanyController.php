@@ -14,8 +14,8 @@ class CompanyController extends Controller
     public function index($id)
     {
 
-        $photos = Photo::where('company_id', $id)->where('verified',1)->get();
-        $logo = Photo::where('company_id', $id)->where('verified',1)->where('type', 'logo')->first();
+        $photos = Photo::where('company_id', $id)->get();
+        $logo = Photo::where('company_id', $id)->where('type', 'logo')->first();
         $company = Company::find($id);
         $streams = $company->streams()->get();
         $title = $company->name;

@@ -20,6 +20,14 @@
 }
 .input-div{
     border-bottom: 1px solid lightgray;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+   i{
+       margin: 0;
+        padding-top: 8px;
+   }
 }
 .input-checked{
 
@@ -43,6 +51,11 @@
     overflow: hidden;
     border-radius: 20px;
     margin-top: 10px;
+    .p-0{
+        flex-basis: 30%;
+        flex-grow: 1;
+    }
+
 
 }
 

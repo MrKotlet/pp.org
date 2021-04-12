@@ -65,6 +65,10 @@
                     <input type="hidden" value="{{$logo['id']}}" name="photoid">
                     <input type="hidden" value="{{$logo['name']}}" name="photoname">
                     <input name="changel" type="file" class="form-control-file" id="changel">
+                    <br>
+                    <button type="submit" class="btn btn-primary">save</button>
+                    <br>
+                </form>
                     @else
                         <form action="{{ action ('HomeController@storemedia')}}" method="POST" role="form" enctype="multipart/form-data">
 
@@ -72,13 +76,13 @@
                             <input type="hidden" value="{{$company['id']}}" name="id">
                             <input type="hidden" value="logo" name="type">
                             <input class="form-control-file" id="formFileSm" type="file" name="photo">
-                            @endif
 
-                            <br>
+
+
                             <button type="submit" class="btn btn-primary">save</button>
                             <br>
                         </form>
-
+            @endif
         </div>
         <div class="modal-close"><i class="fas fa-times"></i></div>
 

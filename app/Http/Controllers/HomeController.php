@@ -7,11 +7,13 @@ use App\Company;
 use App\Tag;
 use App\User;
 use App\Photo;
+use App\View\Components\Admin\roles;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
-use Auth;
+
 
 class HomeController extends Controller
 {
@@ -127,7 +129,7 @@ class HomeController extends Controller
 
 
 
-        if (Auth::id() === 2) {
+        if (Auth::user()->role->name === "admin" ) {
             return redirect('admin/companySearch');
         }
 

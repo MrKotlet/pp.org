@@ -4,7 +4,7 @@
     <div class="row p-4">
         @foreach($company->tags as $tag)
 
-            <div class="tag-static tag-active align-items-center tag-w">
+            <div class="tag-static tag-active tag-w">
                 <p for="tags[]" class="my-auto">{{$tag->name}}</p>
 
             </div>
@@ -18,7 +18,7 @@
 
 {{--modal--}}
 
-<div id="ex3" class="my-modal">
+<div id="ex3" class="my-modal tag-modal">
     <div class="wrapper">
 
         <div>

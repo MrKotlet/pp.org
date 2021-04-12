@@ -38,13 +38,14 @@ body {
 
 #gallery {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
 
     .gallery-item {
         display: block;
-        flex-basis: 30vw;
-        height: 30vw;
+        margin: 5px;
+        flex-basis: 25vw;
+        height: 25vw;
 
         flex-grow: 0;
 
@@ -54,23 +55,32 @@ body {
             box-shadow: 5px 5px #323A42;
         }
     }
+
+}
+.gallery-all{
+    width: 100%;
+
+
+
+    h3 {
+        font-size: 3rem;
+        margin: 20px 30px;
+    }
 }
 
-.gallery-all h3 {
-    font-size: 3rem;
-    margin: 20px 30px;
-}
 
 
 
-.company-info h2 .company-info p {
+.company-info h2, .company-info p {
     padding: 0 20px;
     margin-bottom: 10px;
 }
 
 .company-info p {
-    position: relative;
+    //position: relative;
     margin-right: 20px;
+    word-wrap: break-word;
+
 }
 
 .company-buttons {
@@ -214,11 +224,24 @@ body {
 }
 @media(max-width: 992px){
     #gallery{
-        flex-direction: column;
+
         align-items: center;
         .gallery-item{
-            width: 40vh;
-            flex-basis: 40vh;
+           height: 30vw;
+            flex-basis: 30vw;
+            margin-bottom: 20px;
+        }
+
+    }
+
+}
+@media(max-width: 420px){
+    #gallery{
+
+        align-items: center;
+        .gallery-item{
+            height: 50vw;
+            flex-basis: 50vw;
             margin-bottom: 20px;
         }
 

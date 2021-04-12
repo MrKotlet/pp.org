@@ -13,7 +13,7 @@
     @foreach($photos as $photo)
         @if($photo['type'] !=='logo')
 
-            .photo{{$photo->id}}    {
+            .photo{{$photo->id}}      {
         display: block;
         flex: 0 1 35vh;
         height: 35vh;
@@ -47,7 +47,7 @@
                 <br>
                 <h2>About the Company</h2>
                 <hr>
-                <p class="card-text" >{{$company->opis}}</p>
+                <p class="card-text">{{$company->opis}}</p>
                 <div class="company-buttons row justify-content-end">
                     @if(Auth::check())
                         @if($company->b2b)
@@ -80,13 +80,12 @@
         <div class="gallery-all">
             <h3>Gallery</h3>
             <hr>
-            <div id="gallery" data-toggle="modal"
-                 data-target="#exampleModal">
+            <div id="gallery" >
                 @foreach($photos as $photo)
                     @if($photo['type'] !=='logo')
 
                         <a href="{{asset ('companies/'.$company['id'].'/'.$photo['name'])}}"
-                           data-lightbox="{{$company->name}}" class="photo{{$photo->id}} gallery-item"></a>
+                           class="photo{{$photo->id}} gallery-item image-link "></a>
 
 
 
@@ -198,23 +197,40 @@
 
 @push('scripts')
 
-
+    <link rel="stylesheet" href="{{asset('gallery/gallery.css')}}">
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
-    <link href="{{asset('lightbox/css/lightbox.css')}}" rel="stylesheet"/>
-    <script src="{{ asset('lightbox/js/lightbox.js') }}"></script>
-{{--    <link rel="stylesheet" href="{{asset('css/company.css')}}">--}}
+
+
+
+
+
+    <script src="{{asset('gallery/jquery.magnific-popup.js')}}"></script>
 
     <script src="{{ asset('js/company.js') }}"></script>
-    <script>lightbox.option({
-            // 'disableScrolling': true,
-            'fitImagesInViewport': true,
-            'wrapAround': true,
-            'positionFromTop': 25,
-            'resize Duration': 400
-        })</script>
+
+
+
+
+    <script>
+        $(document).ready(function () {
+
+
+            $('#gallery').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                // other options
+                gallery:{enabled:true}
+            });
+
+
+
+
+
+
+        });
+    </script>
 
 
 @endpush
