@@ -167,7 +167,7 @@ class adminController extends Controller
 
     public function tags()
     {
-        $tags = Tag::all();
+        $tags = Tag::all()->sortByDesc('created_at');
         $type = 6;
         return view('Admin.dashboard', compact('type', 'tags'));
     }

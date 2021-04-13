@@ -88,6 +88,10 @@ class HomeController extends Controller
 
     public function editemail(Request $request)
     {
+        $request -> validate([
+           'email' => 'email:rfc,dns'
+        ]);
+
         $user = User::find($request->input('id'));
         $user->email = $request->input('email');
         $user->save();
@@ -118,6 +122,11 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+           'homepage' =>  'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'
+        ]);
+
+
         $company = new Company;
         $company->user_id = Auth::id();
         $company->name = $request->input('name');
@@ -223,7 +232,7 @@ class HomeController extends Controller
         $company = Company::find($id);
 
         $company->opis = $request->input('opis');
-        $company->verified = '0';
+
         $company->save();
 
         $user = Auth::user();
@@ -331,11 +340,21 @@ class HomeController extends Controller
         $newMain->save();
         return redirect()->action('HomeController@compcreator2');
     }
+    //ajax
+
+    public function addTag(Request $request){
+        $name = $request->tagName;
+
+        $tag = new Tag();
+        $tag->name = $name;
+        $tag->save();
+
+        return response()->json(['tag'=>$tag]);
+    }
 }
 
 
 
 
 
-//$user = Auth::user();
-//Auth::id()
+

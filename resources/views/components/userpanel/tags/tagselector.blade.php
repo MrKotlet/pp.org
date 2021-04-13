@@ -7,7 +7,7 @@
         </div>
     @else
         <div class="tag-i tag-non">
-            <p for="tags[]" >{{$tag->name}}</p>
+            <p for="tags[]">{{$tag->name}}</p>
 
             <i class="fas fa-check-circle d-none"></i>
 

@@ -151,3 +151,7 @@ Route::get('admin/events',[adminController::class,'events']);
 Route::get('admin/media',[adminController::class,'media']);
 Route::get('admin/options',[adminController::class,'options']);
 Route::get('admin/compcreator2/{id}',[adminController::class,'compcreator2']);
+
+//ajax
+
+Route::post('step1tag',[HomeController::class,'addTag']);

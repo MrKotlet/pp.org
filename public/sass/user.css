@@ -2,6 +2,10 @@
   margin-top: 2vh;
 }
 
+.modal-toggle {
+  cursor: pointer;
+}
+
 .step2-div .some-space {
   font-size: 2rem !important;
 }
