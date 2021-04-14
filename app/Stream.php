@@ -19,4 +19,7 @@ class Stream extends Model
     public function company(){
         return $this->belongsTo(Company::class);
     }
+    public function photo(){
+        return $this->hasOne(Photo::class);
+    }
 }

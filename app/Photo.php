@@ -23,5 +23,11 @@ public function user(){
 public function company(){
     return $this->belongsTo(Company::class);
 }
+    public function event(){
+        return $this->belongsTo(Event::class);
+    }
+    public function stream(){
+        return $this->belongsTo(Stream::class);
+    }
 
 }

@@ -5,7 +5,7 @@
         @if($event->visible == 1)
 
             <header id="home"
-                    style="background-image: url({{asset('storage/events/'.$event['id'].'/main_'.$event['id'].'.jpg')}})">
+                    style="background-image: url({{asset('eventPhotos/'.$event['id'].'/'.$event->main()->name)}})">
 
                 <div class="hero-shadow"></div>
                 <a href="event/{{$event['id']}}" style="text-decoration: none">
@@ -14,11 +14,11 @@
                         <p class="display-3 text-center">Upcoming Event</p>
 
                         <div class="main-logo"
-                             style="background-image: url({{asset('storage/events/'.$event['id'].'/logo_'.$event['id'].'.svg')}});">
+                             style="background-image: url({{asset('eventPhotos/'.$event['id'].'/'.$event->logo()->name)}});">
 
                         </div>
                         <p class="display-3">{{$event['name']}}</p>
-                        <p>{{$event['date']}}, {{$event['location']}} </p>
+                        <p>{{$event->showDate()}}, {{$event['location']}} </p>
 
                     </div>
                 </a>
@@ -69,13 +69,13 @@
                     <div class="calendar-event">
                         <div class="event-small">
                             <div class="event-logo {{$event->name}}"
-                                 style="background-image: url({{asset('storage/events/'.$event['id'].'/logo_'.$event['id'].'.svg')}});"></div>
+                                 style="background-image: url({{asset('eventPhotos/'.$event['id'].'/'.$event->logo()->name)}});"></div>
                             <p>{{$event['name']}}</p>
 
-                            <p>{{$event['date']}}</p>
+                            <p>{{$event->showDate()}}</p>
                         </div>
                         <div class="event-big">
-                            <p>{{$event['name']}} - {{$event['date']}}, {{$event['location']}}</p>
+                            <p>{{$event['name']}} - {{$event->showDate()}}, {{$event['location']}}</p>
                             <hr>
                             <p >{{$event['opis']}}</p>
                             <a class="text-decoration-none text-black"
@@ -99,13 +99,13 @@
                         <div class="calendar-event">
                             <div class="event-small">
                                 <div class="event-logo {{$event->name}}"
-                                     style="background-image: url({{asset('storage/events/'.$event['id'].'/logo_'.$event['id'].'.svg')}});"></div>
+                                     style="background-image: url({{asset('eventPhotos/'.$event['id'].'/'.$event->logo()->name)}});"></div>
                                 <p>{{$event['name']}}</p>
 
-                                <p>{{$event['date']}}</p>
+                                <p>{{$event->showDate()}}</p>
                             </div>
                             <div class="event-big">
-                                <p>{{$event['name']}} - {{$event['date']}}, {{$event['location']}}</p>
+                                <p>{{$event['name']}} - {{$event->showDate()}}, {{$event['location']}}</p>
                                 <hr>
                                 <p >{{$event['opis']}}</p>
                                 <a class="text-decoration-none text-black"

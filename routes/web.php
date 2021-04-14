@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\adminEventController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\meetingsController;
@@ -152,6 +153,14 @@ Route::get('admin/media',[adminController::class,'media']);
 Route::get('admin/options',[adminController::class,'options']);
 Route::get('admin/compcreator2/{id}',[adminController::class,'compcreator2']);
 
+//admin events
+
+Route::get('addEvent',[adminEventController::class,'addEvent']);
+Route::post('createEvent',[adminEventController::class,'createEvent']);
+Route::get('editEvent/{id}',[adminEventController::class,'editEvent']);
+Route::post('saveEdit',[adminEventController::class,'saveEdit']);
+Route::get('event-photos/{id}',[adminEventController::class,'eventPhotos']);
+Route::post('storePhoto',[adminEventController::class,'storePhoto']);
 //ajax
 
 Route::post('step1tag',[HomeController::class,'addTag']);

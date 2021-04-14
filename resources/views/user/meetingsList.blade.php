@@ -60,7 +60,7 @@
             </div>
 
             <div class="">
-                <a href="/meetnope/{{$meet->id}}" class="delete">
+                <a href="/meetnope/" class="delete">
                     <button class="btn btn-outline-danger">Yes</button>
                 </a>
                 <a class="confirmation-close">

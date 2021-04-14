@@ -15,16 +15,16 @@
                 <th scope="row">{{$event->id}}</th>
                 <td>{{$event->name}}</td>
 
-                <td>{{$event->date}},{{$event->location}}</td>
+                <td>{{$event->showDate()}}, {{$event->location}}</td>
                 <td>
-                    <a href="/verifyevent/{{$event->id}}">
+                    <a href="/editEvent/{{$event->id}}">
                         <button class="btn-lg btn-warning">edytuj</button>
                     </a>
                     <a href="/event/{{$event->id}}" target="_blank">
                         <button class="btn-lg btn-warning">podejrzyj</button>
                     </a>
-                    <a href="/admin/eventDelete/{{$event->id}}">
-                        <button class="btn-lg btn-warning">usuń</button>
+                    <a href="/event-photos/{{$event->id}}">
+                        <button class="btn-lg btn-warning">photos</button>
                     </a>
                 </td>
             </tr>
@@ -32,4 +32,6 @@
 
         </tbody>
     </table>
+
+    <a href="/addEvent"><button class="btn btn-success">Add Event</button></a>
 </div>
