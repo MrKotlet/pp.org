@@ -27,11 +27,11 @@
         @break
 
         @case(7)
-        <x-admin.events/>
+        <x-admin.events :events="$events"/>
         @break
 
         @case(8)
-        <x-admin.media/>
+        <x-admin.media :streams="$streams"/>
         @break
 
         @case(9)

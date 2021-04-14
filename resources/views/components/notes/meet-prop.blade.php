@@ -1,8 +1,8 @@
 <div class="note-div">
     <div class="meet-note">
     <h4 >New meeting proposal from {{$note->meeting->user->name}}!</h4>
-    <p class="meet-info">Date: {{$note->meeting->date}},
-        Time: {{$note->meeting->hours}}</p>
+    <p class="meet-info">Date: {{$note->meeting->hour->date->showDate()}},
+        Time: {{$note->meeting->hour->showHour()}}</p>
 
 
     @if($note->meeting->status == 'accepted')

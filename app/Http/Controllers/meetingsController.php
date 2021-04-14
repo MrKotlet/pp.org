@@ -8,6 +8,7 @@ use App\Hour;
 use App\Meeting;
 use App\Note;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -190,17 +191,23 @@ class meetingsController extends Controller
     {
         $id = Auth::id();
         $user = User::find($id);
+
+        $time = Carbon::now('Europe/Warsaw');
+        $h = $time->hour;
+        $d = $time->day;
+
+
         $umeets = $user->meetings;
         $company = $user->company;
         if ($company) {
             $cmeets = $company->meetings;
 
             $meets = $umeets->merge($cmeets);
-            return view('user.meetingsList', compact('meets', 'company', 'user'));
+            return view('user.meetingsList', compact('meets', 'company', 'user','h','d'));
         }
         $meets = $umeets;
 
-        return view('user.meetingsList', compact('meets', 'company', 'user'));
+        return view('user.meetingsList', compact('meets', 'company', 'user','h','d'));
 
     }
 

@@ -5,7 +5,7 @@
         @if($meets->isEmpty())
             <h2>You don't have scheduled meetings</h2>
         @else
-            <h1 class="display-2 px-4">Meetings List</h1>
+            <h1 class="display-2 px-4">Meetings List </h1>
             <hr>
             @foreach($meets as $meet)
                 @if($meet->status=='accepted')
@@ -22,11 +22,15 @@
                             @endif
 
 
-                            <p>Date: {{$meet->date}}, Time: {{$meet->hours}}</p>
+                            <p>Date: {{$meet->hour->date->showDate()}}, Time: {{$meet->hour->showHour()}}</p>
                         </div>
                         <div class="d-flex flex-row flex-lg-column align-items-center">
                             <a href="/meetroom/{{$meet->id}}">
-                                <button class="btn-lg btn-primary">meeting room</button>
+                                @if($meet->hour->hour>=$h && $meet->hour->hour<$h+1 && $meet->hour->date->day == $d)
+                                <button class="btn-lg btn-primary" >meeting room</button>
+                                @else
+                                    <button class="btn-lg btn-outline-primary" disabled>meeting room</button>
+                                @endif
                             </a>
                             <br>
                             <a data-modal="{{$meet->id}}" class="meet-cancel">

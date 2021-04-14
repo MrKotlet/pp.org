@@ -19,4 +19,7 @@ class Hour extends Model
     public function meetings(){
         return $this->hasMany(Meeting::class);
     }
+    public function showHour(){
+        return $this->hour.':00';
+    }
 }

@@ -68,7 +68,7 @@
                             message</a>
 
                     @endif
-                    <a href="{{$company['homepage']}}" class="btn btn-danger d-flex align-items-center  ">Homepage</a>
+                    <a href="//{{$company['homepage']}}" class="btn btn-danger d-flex align-items-center  ">Homepage</a>
 
 
                 </div>
@@ -119,7 +119,7 @@
                         <div
                             class="d-flex align-items-center justify-content-center col-4 form-container form-container-inactive"
                             id="{{$date->id}}">
-                            <p>{{$date->date}}</p>
+                            <p>{{$date->showDate()}}</p>
 
                         </div>
                     @endforeach
@@ -134,7 +134,7 @@
                                     <div
                                         class="d-flex align-items-center justify-content-around input-container input-invisible"
                                         id="{{$hour->id}}" >
-                                        <p>{{$hour->hours}}</p>
+                                        <p>{{$hour->showHour()}}</p>
 
                                         <i class="fas fa-dot-circle"></i>
                                         <i class="fas fa-check-circle d-none"></i>
@@ -164,17 +164,17 @@
             <br>
             <div class="summary d-none">
                 <p class="display-4">Summary</p>
-                <p>Data:
+                <p>Date:
 
                     @foreach($event->dates as $date)
 
-                        <span class="{{$date->id}}s d-none date">{{$date->date}}</span>
+                        <span class="{{$date->id}}s d-none date">{{$date->showDate()}}</span>
 
                     @endforeach
                     , time:
                     @foreach($company->hours as $hour)
 
-                        <span class="{{$hour->id}}h d-none hour">{{$hour->hours}}</span>
+                        <span class="{{$hour->id}}h d-none hour">{{$hour->showHour()}}</span>
 
                     @endforeach
                 </p>

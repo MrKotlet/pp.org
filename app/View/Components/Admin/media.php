@@ -6,14 +6,12 @@ use Illuminate\View\Component;
 
 class media extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
+   public $streams;
+
+
+    public function __construct($streams)
     {
-        //
+       $this->streams = $streams;
     }
 
     /**

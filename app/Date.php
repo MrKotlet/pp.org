@@ -11,11 +11,25 @@ class Date extends Model
         'date',
     ];
 
-    public function event(){
+    public function event()
+    {
         return $this->belongsTo(Event::class);
     }
-    public function hours(){
+
+    public function hours()
+    {
         return $this->hasMany(Hour::class);
+    }
+
+    public function showDate()
+    {
+        $month = $this->month;
+        if ($month < 10) {
+        $month = '0'.$month;
+        }
+
+
+        return $this->day . '.' . $month;
     }
 
 }

@@ -32,14 +32,14 @@ class CompanyController extends Controller
 
 
         }
-{}
+
         $photos = Photo::where('company_id', $id)->get();
         $logo = Photo::where('company_id', $id)->where('type', 'logo')->first();
         $company = Company::find($id);
         $streams = $company->streams()->get();
         $title = $company->name;
         $event = Event::firstWhere('visible', 1);
-        return view('company',compact('photos','company','streams','title','event','logo','meetCheck','userMeets'));
+        return view('company',compact('photos','company','streams','title','event','logo','meetCheck'));
     }
     public function indexeng($id)
     {

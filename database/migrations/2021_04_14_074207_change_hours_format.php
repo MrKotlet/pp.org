@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTimestampsToPhotosTable extends Migration
+class ChangeHoursFormat extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddTimestampsToPhotosTable extends Migration
      */
     public function up()
     {
-        Schema::table('photos', function (Blueprint $table) {
-            $table->timestamps();
+        Schema::table('hours', function (Blueprint $table) {
+
+            $table -> integer('hour');
         });
     }
 
@@ -25,8 +26,9 @@ class AddTimestampsToPhotosTable extends Migration
      */
     public function down()
     {
-        Schema::table('photos', function (Blueprint $table) {
-            $table->dropTimestamps();
+        Schema::table('hours', function (Blueprint $table) {
+            $table ->dropColumn('hour');
+
         });
     }
 }

@@ -34,7 +34,7 @@
                             @foreach($dates as $date)
                                 <div class="p-0  g-0">
 
-                                    <div class="date-form border"><p class="m-auto px-3">{{$date->date}}</p></div>
+                                    <div class="date-form border"><p class="m-auto px-3">{{$date->showDate()}}</p></div>
 
                                     @foreach($date->hours()->orderBy('hours', 'asc')->get() as $hour)
 
@@ -42,7 +42,7 @@
 
                                             @if($company->hours->contains($hour->id) )
                                                 <div class="input-div input-checked">
-                                                    <label for="hours[]" class="my-auto">{{$hour->hours}}</label>
+                                                    <label for="hours[]" class="my-auto">{{$hour->showHour()}}</label>
                                                     <i class="fas fa-dot-circle d-none"></i>
                                                     <i class="fas fa-check-circle"></i>
 
@@ -54,7 +54,7 @@
 
                                             @else
                                                 <div class="input-div">
-                                                    <label for="hours[]" class="my-auto">{{$hour->hours}}</label>
+                                                    <label for="hours[]" class="my-auto">{{$hour->showHour()}}</label>
                                                     <i class="fas fa-dot-circle"></i>
                                                     <i class="fas fa-check-circle d-none"></i>
                                                     <input type="checkbox" name="hours[]" value="{{$hour->id}}"

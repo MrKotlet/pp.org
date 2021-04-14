@@ -4,13 +4,13 @@
 
     @if($note->subject=='meetok')
             <h4 >{{$note->meeting->user->name}} accepted your meeting offer!</h4>
-            <p class="meet-info">Date: {{$note->meeting->date}},
-                Time: {{$note->meeting->hours}}</p>
+            <p class="meet-info">Date: {{$note->meeting->hour->date->showDate()}},
+                Time: {{$note->meeting->hour->showHour()}}</p>
 
     @else
-            <h4 >{{$note->meeting->user->name}} declined your meeting offer!</h4>
-            <p class="meet-info">Date: {{$note->meeting->date}},
-                Time: {{$note->meeting->hours}}</p>
+            <h4 >{{$note->meeting->user->name}} declined your meeting offer.</h4>
+            <p class="meet-info">Date: {{$note->meeting->hour->date->showDate()}},
+                Time: {{$note->meeting->hour->showHour()}}</p>
 
     @endif
 

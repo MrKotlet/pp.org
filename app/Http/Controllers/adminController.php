@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Event;
 use App\Photo;
 use App\Role;
+use App\Stream;
 use App\Tag;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -190,14 +192,16 @@ class adminController extends Controller
 
     public function events()
     {
+        $events = Event::all();
         $type = 7;
-        return view('Admin.dashboard', compact('type'));
+        return view('Admin.dashboard', compact('type','events'));
     }
 
     public function media()
     {
+        $streams = Stream::all();
         $type = 8;
-        return view('Admin.dashboard', compact('type'));
+        return view('Admin.dashboard', compact('type','streams'));
     }
 
     public function options()
