@@ -27,7 +27,7 @@ class meetingsController extends Controller
 
         $company = $user->company;
 
-        $event = Event::firstWhere('visible', 1);
+        $event = Event::firstWhere('b2b', 1);
 
         $dates = $event->dates()->get();
 

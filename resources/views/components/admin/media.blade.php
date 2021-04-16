@@ -17,14 +17,25 @@
                 <td>{{$stream->event->name}}</td>
                 <td>{{$stream->date}}</td>
                 <td>
-                    <a href="/verifystream/{{$stream->id}}">
+                    @if($stream->visible)
+                        <a href="/toggle/{{$stream->id}}/s">
+                            <button class="btn-lg btn-danger">ukryj</button>
+                        </a>
+                    @else
+                        @if($stream->photo)
+                            <a href="/toggle/{{$stream->id}}/s">
+                                <button class="btn-lg btn-success">opublikuj</button>
+                            </a>
+                        @endif
+                    @endif
+                    <a href="/editStream/{{$stream->id}}">
                         <button class="btn-lg btn-warning">edytuj</button>
                     </a>
                     <a href="/media/{{$stream->id}}" target="_blank">
                         <button class="btn-lg btn-warning">podejrzyj</button>
                     </a>
-                    <a href="/admin/streamDelete/{{$stream->id}}">
-                        <button class="btn-lg btn-warning">usuń</button>
+                    <a href="/streamDelete/{{$stream->id}}">
+                        <button class="btn-lg btn-outline-danger">usuń</button>
                     </a>
                 </td>
             </tr>
@@ -32,4 +43,7 @@
 
         </tbody>
     </table>
+    <a href="/newStream">
+        <button class="btn btn-success">Add Stream</button>
+    </a>
 </div>

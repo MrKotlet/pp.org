@@ -7,7 +7,7 @@
 
         <h3>The next networking session will take place during the event:</h3>
         <h1 class="display-3">{{$event->name}}</h1>
-        <p class="mx-1">{{$event->date}}</p>
+        <p class="mx-1">{{$event->showDate()}}</p>
         @if($company->b2b!=1)
             <button class="btn-lg btn-outline-success form-toggler">I want to participate in a B2B session</button>
 

@@ -40,7 +40,7 @@
                     @foreach($streams as $stream)
                         <a href="/media/{{$stream->id}}" class="card col-6 col-md-4 text-decoration-none mx-2">
 
-                            <img src="{{asset('/storage/events/thumbnail.png')}}" class="card-img-top w-100" alt="...">
+                            <img src="{{asset('/thumbnails/'.$stream->photo->name)}}" class="card-img-top w-100" alt="...">
                             <div class="card-body">
 
                                 <h5 class="card-title">{{$stream -> name}}</h5>

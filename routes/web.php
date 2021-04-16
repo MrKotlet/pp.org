@@ -161,6 +161,17 @@ Route::get('editEvent/{id}',[adminEventController::class,'editEvent']);
 Route::post('saveEdit',[adminEventController::class,'saveEdit']);
 Route::get('event-photos/{id}',[adminEventController::class,'eventPhotos']);
 Route::post('storePhoto',[adminEventController::class,'storePhoto']);
+Route::get('/setAsMain/{id}/{pid}',[adminEventController::class,'setAsMain']);
+Route::get('/deletePhoto/{eventId}/{photoId}/{photoName}',[adminEventController::class,'delete']);
+Route::get('/newStream',[adminEventController::class,'newStream']);
+Route::post('/createStream',[adminEventController::class,'createStream']);
+Route::get('/editStream/{id}',[adminEventController::class,'editStream']);
+Route::post('/saveEditStream',[adminEventController::class,'saveEditStream']);
+Route::get('/eventDelete/{id}',[adminEventController::class,'deleteEvent']);
+Route::get('/streamDelete/{id}',[adminEventController::class,'deleteStream']);
+Route::get('/toggle/{type}/{id}',[adminEventController::class,'toggle']);
+Route::get('/createB2B/{id}',[adminEventController::class,'createB2BSession']);
+Route::get('/testB2B',[adminEventController::class,'createTestSession']);
 //ajax
 
 Route::post('step1tag',[HomeController::class,'addTag']);

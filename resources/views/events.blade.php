@@ -2,7 +2,7 @@
 
 @section('content')
     @foreach($events as $event)
-        @if($event->visible == 1)
+        @if($event->visible == 2)
 
             <header id="home"
                     style="background-image: url({{asset('eventPhotos/'.$event['id'].'/'.$event->main()->name)}})">
@@ -41,7 +41,7 @@
                 @foreach($streams as $stream)
                     <a href="media/{{$stream->id}}" class="card col-6 col-sm-4">
 
-                        <img src="{{asset('/storage/events/thumbnail.png')}}" class="card-img-top w-100" alt="...">
+                        <img src="{{asset('/thumbnails/'.$stream->photo->name)}}" class="card-img-top w-100" alt="...">
                         <div class="card-body">
 
                             <h5 class="card-title">{{$stream -> name}}</h5>

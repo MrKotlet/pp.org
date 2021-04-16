@@ -22,4 +22,7 @@ class Stream extends Model
     public function photo(){
         return $this->hasOne(Photo::class);
     }
+    public function chat(){
+        return $this->hasOne(Chat::class);
+    }
 }

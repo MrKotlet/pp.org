@@ -3,7 +3,7 @@
 @section('content')
     <main class="you-tube container">
         <div class="video-container">
-            <div id="player" ></div>
+            <div id="player"></div>
 
         </div>
 
@@ -77,10 +77,11 @@
         <div class="col-12 col-lg-4">
             <h4 class="display-4" style="text-align: right">Chat</h4>
 
+            <iframe src="https://www5.cbox.ws/box/?{{$stream->chat->link}}" width="100%"
+                    height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0"
+                    marginwidth="0" scrolling="auto"></iframe>
 
-            <iframe src="https://www5.cbox.ws/box/?boxid=923427&boxtag=5KRglb" width="100%" height="450"
-                    allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0"
-                    scrolling="auto" class="embed-responsive border"></iframe>
+
         </div>
 
 
@@ -109,6 +110,6 @@
 @endsection
 @push('scripts')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-{{--    <link rel="stylesheet" href="{{asset('css/media.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('css/media.css')}}">--}}
     <script src="{{asset('js/event.js')}}"></script>
 @endpush

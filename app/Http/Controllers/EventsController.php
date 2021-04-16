@@ -11,8 +11,8 @@ class EventsController extends Controller
 {
     public function index()
     {
-        $streams = Stream::all();
-        $events = Event::all()->sortBy('startMonth');
+        $streams = Stream::where('visible', 1)->get();
+        $events = Event::where('visible','>=', 1)->orderBy('startMonth')->get();
         $title = 'Events';
         return view('events',compact('streams','title','events'));
     }
@@ -21,7 +21,7 @@ class EventsController extends Controller
     {
         $event = Event::find($id);
 
-        $streams = $event->streams()->get();
+        $streams = $event->streams()->where('visible', 1)->get();
         $title = $event->name;
         return view('event',compact('title','streams','event'));
     }

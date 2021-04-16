@@ -38,7 +38,7 @@ class CompanyController extends Controller
         $company = Company::find($id);
         $streams = $company->streams()->get();
         $title = $company->name;
-        $event = Event::firstWhere('visible', 1);
+        $event = Event::firstWhere('b2b', 1);
         return view('company',compact('photos','company','streams','title','event','logo','meetCheck'));
     }
     public function indexeng($id)

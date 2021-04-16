@@ -50,7 +50,7 @@
                 <p class="card-text">{{$company->opis}}</p>
                 <div class="company-buttons row justify-content-end">
                     @if(Auth::check())
-                        @if($company->b2b && !($company->user->id === Auth::id()) && $meetCheck)
+                        @if($company->b2b && !($company->user->id === Auth::id()) && $meetCheck && $event)
                             <a href="#" class="btn btn-primary d-flex flex-wrap align-items-center open-form">Offer a
                                 meeting</a>
                             <a href="#" class="btn btn-success  flex-wrap align-items-center d-none">Send a message</a>
@@ -58,7 +58,7 @@
                         @endif
 
                     @else
-                        @if($company->b2b)
+                        @if($company->b2b  && $event)
                             <a href="#" class="btn btn-outline-primary d-flex flex-wrap align-items-center"
                                data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Offer a
                                 meeting</a>
@@ -101,6 +101,7 @@
 
 
     <!-- meeting form-->
+    @if($event)
     <div class="container mx-auto create-meeting-div ">
 
 
@@ -190,6 +191,7 @@
         </form>
 
     </div>
+    @endif
 
 @endsection
 

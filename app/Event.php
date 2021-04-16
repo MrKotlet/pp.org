@@ -21,6 +21,7 @@ class Event extends Model
         'endMonth',
         'startDay',
         'endDay',
+        'b2b'
     ];
 
     public function streams()

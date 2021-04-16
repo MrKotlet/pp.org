@@ -24,11 +24,19 @@
         </form>
         <hr>
         @if($photos->isNotEmpty())
-            <div class="row">
+            <div class="row ">
                 @foreach ($photos as $photo)
-                    <div class="border col-3 d-flex flex-column align-items-center">
+                    <div class="border col-3 d-flex flex-column align-items-center pb-3 pt-3">
                         <img src="{{asset ('eventPhotos/'.$id.'/'.$photo['name'])}}" alt="" class="w-100">
                         <p>{{$photo->type}}</p>
+
+                            <div class="btn-group" role="group" >
+                                <a href="/deletePhoto/{{$id}}/{{$photo->id}}/{{$photo->name}}" class="m-1"><button type="button" class="btn btn-danger" >Delete</button></a>
+                                @if($photo->type == 'other')
+                                    <a href="/setAsMain/{{$id}}/{{$photo->id}}" class="m-1"><button type="button" class="btn btn-success">Set as main</button></a>
+                                @endif
+                            </div>
+
 
                     </div>
 
