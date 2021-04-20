@@ -60,8 +60,8 @@
 
         <section class="">
             <div class="mx-auto  bg-light title">
-                <p class="display-3 text-center bg-danger text-white m-0">Calendar of Events</p>
-                <p class="text-center bg-danger text-white m-0">2021</p>
+                <p class="display-3 text-center bg-danger text-white m-0" >Calendar of Events</p>
+                <p class="text-center bg-danger  display-4 text-white m-0" style="font-weight: bold">2021</p>
             </div>
             <div class="mx-auto calendar">
                 @foreach($events as $event)
@@ -90,7 +90,7 @@
 
             <div class="mx-auto  bg-light title">
 
-                <p class="text-center bg-danger text-white m-0">2022</p>
+                <p class="text-center bg-danger display-4 text-white m-0" style="font-weight: bold">2022</p>
             </div>
 
             <div class="mx-auto calendar">

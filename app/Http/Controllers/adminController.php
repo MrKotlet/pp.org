@@ -15,6 +15,12 @@ use Illuminate\Http\Request;
 
 class adminController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function index()
     {
         $type = 1;
@@ -194,14 +200,14 @@ class adminController extends Controller
     {
         $events = Event::all();
         $type = 7;
-        return view('Admin.dashboard', compact('type','events'));
+        return view('Admin.dashboard', compact('type', 'events'));
     }
 
     public function media()
     {
         $streams = Stream::all();
         $type = 8;
-        return view('Admin.dashboard', compact('type','streams'));
+        return view('Admin.dashboard', compact('type', 'streams'));
     }
 
     public function options()

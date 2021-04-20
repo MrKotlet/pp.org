@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\File;
 
 class adminEventController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function addEvent()
     {
 
