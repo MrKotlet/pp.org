@@ -5,22 +5,29 @@
         <thead>
         <tr>
             <th scope="col">#id</th>
-            <th scope="col">Nazwa</th>
+            <th scope="col">Name (click to edit)</th>
             <th scope="col">liczba użyć</th>
             <th scope="col">Edycja</th>
         </tr>
         </thead>
         <tbody>
         @foreach($tags as $tag)
-            <tr>
+            <tr class="tr-tag">
                 <th scope="row">{{$tag->id}}</th>
-                <td>{{$tag->name}}</td>
+                <td class="name">{{$tag->name}}</td>
+                <td class="name-input d-none"><input type="text" value="{{$tag->name}}" data-id="{{$tag->id}}">
+                    <button class=" btn btn-primary save">save</button>
+                </td>
+
                 <td>{{$tag->companies->count()}}</td>
+
                 <td>
                     <a href="/admin/tagDelete/{{$tag->id}}">
                         <button class="btn-lg btn-warning">usuń</button>
+
                     </a>
                 </td>
+
             </tr>
         @endforeach
 
@@ -33,6 +40,7 @@
         <input type="text" class="form-control" aria-describedby="passwordHelpBlock" name="name">
         <button class="btn-lg btn-success">Dodaj</button>
     </form>
+
 
 
 </div>

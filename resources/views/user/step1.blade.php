@@ -77,7 +77,7 @@
 
 @endsection
 @push('scripts')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     {{--    <link rel="stylesheet" href="{{asset('css/userpanel/tags/tagselector.css')}}">--}}
     {{--    <link rel="stylesheet" href="{{asset('css/userpanel/step1.css')}}">--}}
     <script src="{{ asset('js/userpanel/tags/tagselector.js') }}"></script>

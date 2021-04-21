@@ -175,3 +175,4 @@ Route::get('/testB2B',[adminEventController::class,'createTestSession']);
 //ajax
 
 Route::post('step1tag',[HomeController::class,'addTag']);
+Route::post('/admin-tag',[adminController::class,'tagEdit']);

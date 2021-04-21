@@ -182,6 +182,46 @@
 
 
         </script>
+        <script>
+
+            $('.f-div2 button').click(e => {
+                e.preventDefault();
+
+                $id = $('#add-tag').val();
+
+                $.ajax({
+
+                    url: '{{url('/step1tag')}}',
+                    type: "POST",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        "tagName": $id,
+
+
+                    },
+                    dataType: "json",
+                    success: function (res) {
+                        console.log('działa')
+                        $('.f-div .row').append(
+                            `<div class="tag-div m-1">
+                                <div class="tag-i tag-active">
+                                            <p for="tags[]" class="my-auto">${res.tag.name}</p>
+
+                                            <i class="fas fa-check-circle"></i>
+                                </div>
+
+                                <input type="checkbox" class="form-control" name="tags[]" value="${res.tag.id}" checked="checked">
+
+                         </div>`
+                        );
+
+                    }
+
+                })
+
+
+            })
+        </script>
         <script src="{{ asset('js/userpanel/step2/descriptionchanger.js') }}"></script>
     @endpush
 

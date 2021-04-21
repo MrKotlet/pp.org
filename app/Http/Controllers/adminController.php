@@ -188,6 +188,16 @@ class adminController extends Controller
         return redirect('admin/tags');
     }
 
+    public function tagEdit(Request $request)
+    {
+        $tag = Tag::find($request->id);
+        $tag -> name = $request->tagName;
+        $tag -> save();
+
+        return response()->json(['tagName'=>$tag->name]);
+
+    }
+
     public function addTag(Request $request)
     {
         $tag = new Tag();

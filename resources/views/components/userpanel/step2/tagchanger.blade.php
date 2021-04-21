@@ -20,7 +20,20 @@
 
 <div id="ex3" class="my-modal tag-modal">
     <div class="wrapper">
+        <div>
 
+            <h4>Missing tag? Add it here</h4>
+
+
+
+        </div>
+
+        <div class="f-div2">
+            <input type="text" id="add-tag">
+            <button class="btn btn-warning">add tag</button>
+
+
+        </div>
         <div>
 
             <h4>Choose tags</h4>

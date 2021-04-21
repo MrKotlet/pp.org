@@ -39,7 +39,8 @@ class CompanyController extends Controller
         $streams = $company->streams()->get();
         $title = $company->name;
         $event = Event::firstWhere('b2b', 1);
-        return view('company',compact('photos','company','streams','title','event','logo','meetCheck'));
+        $b2b = Event::where('b2b', 1)->count();
+        return view('company',compact('photos','company','streams','title','event','logo','meetCheck','b2b'));
     }
     public function indexeng($id)
     {
