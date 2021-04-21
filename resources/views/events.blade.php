@@ -1,32 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-    @foreach($events as $event)
-        @if($event->visible == 2)
 
             <header id="home"
-                    style="background-image: url({{asset('eventPhotos/'.$event['id'].'/'.$event->main()->name)}})">
+                    style="background-image: url({{asset('eventPhotos/'.$upcoming['id'].'/'.$upcoming->main()->name)}})">
 
                 <div class="hero-shadow"></div>
-                <a href="event/{{$event['id']}}" style="text-decoration: none">
+                <a href="event/{{$upcoming['id']}}" style="text-decoration: none">
                     <div
                         class="container h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
                         <p class="display-3 text-center">Upcoming Event</p>
 
                         <div class="main-logo"
-                             style="background-image: url({{asset('eventPhotos/'.$event['id'].'/'.$event->logo()->name)}});">
+                             style="background-image: url({{asset('eventPhotos/'.$upcoming['id'].'/'.$upcoming->logo()->name)}});">
 
                         </div>
-                        <p class="display-3">{{$event['name']}}</p>
-                        <p>{{$event->showDate()}}, {{$event['location']}} </p>
+                        <p class="display-3">{{$upcoming['name']}}</p>
+                        <p>{{$upcoming->showDate()}}, {{$upcoming['location']}} </p>
 
                     </div>
                 </a>
 
 
             </header>
-        @endif
-    @endforeach
+
 
     <section class=" first-section">
 
