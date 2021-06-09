@@ -65,13 +65,13 @@ class EventsController extends Controller
                 $id = $e->id;
                 $dFlag = $esd;
                 $mFlag = $em;
-            } elseif ($em <= $mFlag && $em>$nowM) {
+            } elseif ($em <= $mFlag && $em > $nowM) {
                 if ($em != $mFlag) {
 
                     $id = $e->id;
                     $dFlag = $esd;
                     $mFlag = $em;
-                }elseif ($esd < $dFlag){
+                } elseif ($esd < $dFlag) {
                     $id = $e->id;
                     $dFlag = $esd;
                     $mFlag = $em;
@@ -81,11 +81,11 @@ class EventsController extends Controller
 
         }
 
-if($id){
-    $upcoming = Event::find($id);
-}else{
-    $upcoming = Event::where('year',$nowY+1)->first();
-}
+        if ($id) {
+            $upcoming = Event::find($id);
+        } else {
+            $upcoming = Event::where('year', $nowY + 1)->first();
+        }
 
 
         return $upcoming;
